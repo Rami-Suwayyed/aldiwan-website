@@ -1,0 +1,278 @@
+'use client'
+
+import React, { useState, useEffect } from 'react'
+import { useTranslation } from './TranslationProvider'
+import Image from 'next/image'
+import Link from 'next/link'
+import { 
+  MapPin, 
+  Phone, 
+  Mail, 
+  Facebook, 
+  Instagram, 
+  Twitter, 
+  Youtube,
+  ChevronUp,
+  ChevronRight,
+  Heart
+} from 'lucide-react'
+
+export default function Footer() {
+  const { t, isRTL } = useTranslation()
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      const windowHeight = window.innerHeight
+      
+      // Show button after scrolling past 50% of viewport height
+      if (scrollPosition > windowHeight * 0.5) {
+        setShowBackToTop(true)
+      } else {
+        setShowBackToTop(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offsetTop = element.offsetTop - 80
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
+  return (
+    <footer className={`relative bg-primary-gradient text-white ${isRTL ? 'rtl' : 'ltr'}`}>
+      {/* Decorative Pattern */}
+      <div className="absolute inset-0 pattern-geometric opacity-10"></div>
+      
+      {/* Back to Top Button */}
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-40 bg-accent-gold hover:bg-accent-gold/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-hover transition-all duration-300 transform hover:-translate-y-1"
+          aria-label="Back to top"
+        >
+          <ChevronUp className="w-6 h-6" />
+        </button>
+      )}
+
+      <div className="relative z-10">
+        {/* Main Footer Content */}
+        <div className="container mx-auto px-4 lg:px-8 max-w-7xl py-16">
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ${isRTL ? 'text-right' : 'text-left'}`}>
+            {/* Brand Section */}
+            <div className="lg:col-span-1 space-y-6">
+              <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <Image
+                  src="/image/3D_Logo.png"
+                  alt="Al Diwan Al Yemeni"
+                  width={50}
+                  height={50}
+                  className="w-12 h-12 object-contain"
+                />
+                <div>
+                  <h3 className="text-xl font-bold">
+                    {isRTL ? 'الديوان اليمني' : 'Al Diwan Al Yemeni'}
+                  </h3>
+                </div>
+              </div>
+              
+              <p className="text-white/90 leading-relaxed">
+                {t('footer.description')}
+              </p>
+
+              {/* Social Media */}
+              <div>
+                <h4 className="text-lg font-semibold mb-4">{t('footer.followUs')}</h4>
+                <div className={`flex gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    aria-label="Facebook"
+                  >
+                    <Facebook className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    aria-label="Twitter"
+                  >
+                    <Twitter className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    aria-label="YouTube"
+                  >
+                    <Youtube className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div className="space-y-6">
+              <h4 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h4>
+              <div className="space-y-3">
+                <button
+                  onClick={() => scrollToSection('home')}
+                  className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
+                >
+                  <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
+                    isRTL ? 'ml-3 rotate-180' : 'mr-3'
+                  }`} />
+                  <span>{t('navigation.home')}</span>
+                </button>
+                <button
+                  onClick={() => scrollToSection('about')}
+                  className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
+                >
+                  <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
+                    isRTL ? 'ml-3 rotate-180' : 'mr-3'
+                  }`} />
+                  <span>{t('navigation.about')}</span>
+                </button>
+                <button
+                  onClick={() => scrollToSection('menu')}
+                  className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
+                >
+                  <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
+                    isRTL ? 'ml-3 rotate-180' : 'mr-3'
+                  }`} />
+                  <span>{t('navigation.menu')}</span>
+                </button>
+                <button
+                  onClick={() => scrollToSection('reservations')}
+                  className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
+                >
+                  <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
+                    isRTL ? 'ml-3 rotate-180' : 'mr-3'
+                  }`} />
+                  <span>{t('navigation.reservations')}</span>
+                </button>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
+                >
+                  <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
+                    isRTL ? 'ml-3 rotate-180' : 'mr-3'
+                  }`} />
+                  <span>{t('navigation.contact')}</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <h4 className="text-lg font-semibold mb-4">{t('footer.contactInfo')}</h4>
+              <div className="space-y-4">
+                <div className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <MapPin className="w-5 h-5 text-accent-gold flex-shrink-0 mt-0.5" />
+                  <div className="text-white/90 text-sm">
+                    123 Heritage Street<br />
+                    Old City Quarter<br />
+                    Downtown, Capital City 12345
+                  </div>
+                </div>
+                
+                <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <Phone className="w-5 h-5 text-accent-gold flex-shrink-0" />
+                  <div className="text-white/90 text-sm">
+                    <a href="tel:+15551234567" className="hover:text-white transition-colors">
+                      +1 (555) 123-4567
+                    </a>
+                  </div>
+                </div>
+                
+                <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <Mail className="w-5 h-5 text-accent-gold flex-shrink-0" />
+                  <div className="text-white/90 text-sm">
+                    <a href="mailto:info@aldiwanalyemeni.com" className="hover:text-white transition-colors">
+                      info@aldiwanalyemeni.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Newsletter */}
+            <div className="space-y-6">
+              <h4 className="text-lg font-semibold mb-4">
+                {isRTL ? 'النشرة الإخبارية' : 'Newsletter'}
+              </h4>
+              <p className="text-white/90 text-sm">
+                {isRTL 
+                  ? 'اشترك للحصول على آخر الأخبار والعروض الخاصة'
+                  : 'Subscribe to get the latest news and special offers'
+                }
+              </p>
+              
+              <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
+                <input
+                  type="email"
+                  placeholder={isRTL ? 'عنوان البريد الإلكتروني' : 'Email address'}
+                  className={`w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-transparent ${
+                    isRTL ? 'text-right' : 'text-left'
+                  }`}
+                />
+                <button
+                  type="submit"
+                  className="w-full bg-accent-gold hover:bg-accent-gold/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+                >
+                  {isRTL ? 'اشتراك' : 'Subscribe'}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-white/20">
+          <div className="container mx-auto px-4 lg:px-8 max-w-7xl py-6">
+            <div className={`flex flex-col md:flex-row items-center justify-between gap-4 ${
+              isRTL ? 'md:flex-row-reverse text-right' : 'text-left'
+            }`}>
+              <div className={`flex items-center gap-1 text-white/90 text-sm ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <span>{t('footer.rights')}</span>
+                <Heart className="w-4 h-4 text-red-400 mx-1" />
+                <span>Made with love</span>
+              </div>
+              
+              <div className={`flex items-center gap-6 text-sm ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <Link href="/privacy" className="text-white/90 hover:text-white transition-colors">
+                  {t('footer.privacy')}
+                </Link>
+                <Link href="/terms" className="text-white/90 hover:text-white transition-colors">
+                  {t('footer.terms')}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
