@@ -1,0 +1,236 @@
+{
+  "appName": "Al Diwan Al Yemeni",
+  "appNameArabic": "الديوان اليمني",
+  "loading": "Loading...",
+  
+  "metadata": {
+    "title": "Al Diwan Al Yemeni - Authentic Yemeni Restaurant",
+    "description": "Experience authentic Yemeni cuisine in a warm, welcoming atmosphere. Traditional recipes and finest ingredients."
+  },
+
+  "navigation": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About Us",
+    "reservations": "Reservations",
+    "contact": "Contact",
+    "language": "العربية",
+    "switchLanguage": "Switch Language"
+  },
+
+  "hero": {
+    "title": "Authentic Yemeni Flavors",
+    "subtitle": "Experience the Rich Heritage of Yemen",
+    "description": "Welcome to Al Diwan Al Yemeni, where traditional Yemeni cuisine meets modern hospitality. Discover authentic flavors passed down through generations.",
+    "cta": {
+      "menu": "View Menu",
+      "reservations": "Make Reservation"
+    },
+    "stats": {
+      "rating": "Rating",
+      "delivery": "Min Delivery",
+      "customers": "Happy Customers"
+    },
+    "status": {
+      "openNow": "Open Now",
+      "reviews": "Reviews"
+    }
+  },
+
+  "about": {
+    "title": "Our Story",
+    "subtitle": "Preserving Tradition",
+    "description": "Al Diwan Al Yemeni brings the authentic taste of Yemen to your table. Our chefs use traditional recipes and the finest ingredients to create an unforgettable dining experience.",
+    "features": {
+      "authentic": "Authentic Recipes",
+      "authenticDesc": "Traditional recipes passed down through generations",
+      "fresh": "Fresh Ingredients",
+      "freshDesc": "Sourced daily from the finest local suppliers",
+      "heritage": "Cultural Heritage",
+      "heritageDesc": "Preserving the authentic taste of Yemen",
+      "hospitality": "Warm Hospitality",
+      "hospitalityDesc": "Exceptional service with genuine care"
+    },
+    "stats": {
+      "yearsExp": "Years Experience",
+      "customers": "Happy Customers",
+      "dishes": "Authentic Dishes"
+    },
+    "awards": {
+      "winning": "Award Winning",
+      "bestRestaurant": "Best Yemeni Restaurant 2024"
+    },
+    "imageAlt": {
+      "main": "Al Diwan Al Yemeni Restaurant",
+      "dish": "Traditional Yemeni Dish"
+    }
+  },
+
+  "aboutPage": {
+    "title": "About Us",
+    "subtitle": "Our Heritage & Story",
+    "intro": "Al-Diwan Al-Yemeni draws its name from the traditional Yemeni Diwan, a historic symbol of generosity, hospitality, and social gathering. The restaurant embodies this rich heritage with a contemporary touch, offering guests an experience steeped in Yemen's cultural legacy and authentic flavors, all within an atmosphere that blends tradition with elegance.",
+    "heritage": {
+      "title": "Our Heritage",
+      "content": "Al-Diwan Al-Yemeni draws its name from the traditional Yemeni Diwan, a historic symbol of generosity, hospitality, and social gathering. The restaurant embodies this rich heritage with a contemporary touch, offering guests an experience steeped in Yemen's cultural legacy and authentic flavors, all within an atmosphere that blends tradition with elegance."
+    },
+    "pioneer": {
+      "title": "Our Restaurants",
+      "content": "Al-Diwan Al-Yemeni is one of the pioneering Yemeni and Gulf restaurants in Jordan and stands out as the first in the country to embrace the authentic traditional Yemeni style. Through its ambiance and design, the restaurant reflects Yemen's rich heritage, offering guests an experience imbued with the country's cultural authenticity and distinctive traditional details."
+    },
+    "team": {
+      "title": "Our Team",
+      "content": "Our restaurant is proud to have a dedicated and fully integrated Yemeni team committed to delivering the highest standards of service across all departments. From delivery services to the front-of-house staff, customer follow-up, and accounting, every team member contributes to a seamless experience. At the heart of our operation, a distinguished group of chefs exemplifies the restaurant's excellence, bringing authentic Yemeni flavors to life with precision and mastery."
+    },
+    "quality": {
+      "title": "Quality",
+      "content": "We believe that excellence lies in the details. That is why we are committed to upholding the highest standards of quality in everything we offer, ensuring that your experience with us is exceptional and truly reflects the essence of craftsmanship and perfection."
+    },
+    "service": {
+      "title": "Service",
+      "content": "We place the highest priority on serving our guests, reflecting the esteemed reputation of our restaurant and honoring the trust of those who visit us. We continuously strive to deliver a refined experience marked by meticulous attention to detail, offering specialized services for events and external catering, always meeting the expectations and sophisticated tastes of our clientele."
+    },
+    "hours": {
+      "title": "Working Hours"
+    },
+    "diwan": {
+      "title": "Al-Diwan Al-Yemeni",
+      "content": "The name Al-Diwan Al-Yemeni is inspired by the historic concept of the \"Diwan\" in Yemeni heritage—a symbol of generosity, hospitality, wisdom, and communal gathering. For centuries, the Diwan has served as a center for exchanging news, holding councils, hosting social and cultural meetings, where stories were shared, matters were discussed, and Arabic coffee and dates were offered as tokens of authenticity and welcome, making it the vibrant heart of Yemeni society.\n\nThe Diwan has long been intertwined with Yemen's rich history, serving as a meeting place for families and community leaders, a venue for important decisions, and a hub for poets, scholars, and artisans who passed down Yemeni traditions through generations. Traditional Yemeni Diwans embody a sense of heritage and dignity: open and communal spaces that simultaneously offer warmth and a personal touch, blending social values with the cultural and artistic spirit that has defined Yemen across centuries.\n\nDrawing from this deep-rooted cultural legacy, Al-Diwan Al-Yemeni Restaurant carries the Diwan's name and identity, extending its historic essence into a modern setting. Every detail—from the architectural design to the dining experience—reflects the traditional spirit of the Yemeni Diwan, immersing guests in an atmosphere rich with authenticity and heritage. Each visit offers a complete experience that combines elegance and warmth, connecting the richness of Yemeni culture with visitors seeking a genuine journey through the traditions and timeless charm of Yemen."
+    },
+    "stats": {
+      "chefs": "Expert Chefs"
+    }
+  },
+
+  "menu": {
+    "title": "Our Menu",
+    "subtitle": "Traditional Yemeni Cuisine",
+    "viewDetails": "View Details",
+    "orderNow": "Order Now",
+    "browseFullMenu": "Browse Full Menu",
+    "experienceMenu": "Experience Our Full Menu",
+    "experienceDesc": "Discover our extensive collection of authentic Yemeni dishes prepared with utmost care",
+    "categories": {
+      "mains": "Main Dishes",
+      "rice": "Rice Dishes",
+      "grilled": "Grilled Specialties",
+      "appetizers": "Appetizers",
+      "desserts": "Desserts",
+      "beverages": "Beverages"
+    }
+  },
+
+  "reservations": {
+    "title": "Make a Reservation",
+    "subtitle": "Book Your Table",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "date": "Reservation Date",
+      "time": "Preferred Time",
+      "guests": "Number of Guests",
+      "requests": "Special Requests",
+      "submit": "Book Table",
+      "submitting": "Booking...",
+      "submittingText": "Submitting..."
+    },
+    "success": "Reservation request sent successfully! We will contact you shortly.",
+    "successMessage": "We will contact you to confirm your reservation",
+    "error": "Please fill in all required fields.",
+    "placeholder": {
+      "name": "Enter your full name",
+      "email": "your.email@example.com",
+      "phone": "+1 (555) 000-0000",
+      "requests": "Any special requests or notes..."
+    },
+    "info": {
+      "title": "Reservation Information",
+      "openingHours": "Opening Hours",
+      "policy": "Reservation Policy",
+      "policyItems": {
+        "confirmation": "Confirmation within 24 hours",
+        "advance": "Advance booking recommended",
+        "cancellation": "Free cancellation 2 hours prior"
+      },
+      "instantContact": "Instant Contact",
+      "quickBooking": "Quick booking:",
+      "cta": "Book your table now and enjoy an unforgettable dining experience in authentic Yemeni atmosphere"
+    }
+  },
+
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in Touch",
+    "description": "Have a question or feedback? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "info": {
+      "address": "Restaurant Address",
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "hours": "Opening Hours"
+    },
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "sendingText": "Sending..."
+    },
+    "success": "Message sent successfully! We'll get back to you soon.",
+    "successMessage": "We will get back to you soon",
+    "error": "Please fill in all required fields.",
+    "hours": {
+      "weekdays": "Mon - Thu: 11:00 AM - 11:00 PM",
+      "weekend": "Fri - Sun: 11:00 AM - 12:00 AM"
+    },
+    "placeholder": {
+      "name": "Enter your name",
+      "email": "your.email@example.com",
+      "subject": "How can we help?",
+      "message": "Write your message here..."
+    },
+    "location": {
+      "title": "Our Location",
+      "address": "123 Heritage Street, Old City Quarter, Downtown, Capital City 12345",
+      "phone": "+1 (555) 123-4567",
+      "email": "info@aldiwanalyemeni.com",
+      "getDirections": "Get Directions"
+    }
+  },
+
+  "footer": {
+    "description": "Experience authentic Yemeni cuisine in a warm, welcoming atmosphere.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "followUs": "Follow Us",
+    "rights": "© 2024 Al Diwan Al Yemeni. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Subscribe to get the latest news and special offers",
+    "newsletterPlaceholder": "Email address",
+    "subscribe": "Subscribe",
+    "madeWithLove": "Made with love"
+  },
+
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.",
+    "goHome": "Go to Home",
+    "viewMenu": "View Menu",
+    "popularLinks": "Popular Links"
+  },
+
+  "common": {
+    "viewMore": "View More",
+    "readMore": "Read More",
+    "close": "Close",
+    "backToTop": "Back to top",
+    "getDirections": "Get Directions",
+    "selectTime": "Select Time",
+    "guest": "Guest",
+    "guests": "Guests"
+  }
+}

@@ -10,10 +10,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#A0522D', // Saddle brown - warm Yemeni spice color
+        primary: '#361F13', // Dark brown - primary visual identity color
         secondary: {
           light: '#F5E6D3', // Warm cream - inspired by traditional architecture
-          dark: '#8B4513', // Dark saddle brown
+          dark: '#4A2E1F', // Darker brown for secondary
         },
         accent: {
           red: '#CD5C5C', // Indian red - inspired by traditional tiles
@@ -62,17 +62,17 @@ module.exports = {
         'custom': '16px',
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(135deg, rgba(160,82,45,0.9), rgba(139,69,19,0.8))',
-        'primary-gradient': 'linear-gradient(135deg, #A0522D, #8B4513)',
+        'hero-gradient': 'linear-gradient(135deg, rgba(54,31,19,0.9), rgba(74,46,31,0.8))',
+        'primary-gradient': 'linear-gradient(135deg, #361F13, #4A2E1F)',
         'secondary-gradient': 'linear-gradient(135deg, #CD5C5C, #DAA520)',
         'warm-gradient': 'linear-gradient(135deg, #FDF8F0, #F5E6D3)',
-        'moroccan-pattern': 'radial-gradient(circle at 50% 50%, rgba(160,82,45,0.1) 2px, transparent 2px)',
-        'geometric-pattern': 'conic-gradient(from 0deg at 50% 50%, rgba(160,82,45,0.1) 0deg, transparent 120deg, rgba(205,92,92,0.1) 240deg, transparent 360deg)',
+        'moroccan-pattern': 'radial-gradient(circle at 50% 50%, rgba(54,31,19,0.1) 2px, transparent 2px)',
+        'geometric-pattern': 'conic-gradient(from 0deg at 50% 50%, rgba(54,31,19,0.1) 0deg, transparent 120deg, rgba(205,92,92,0.1) 240deg, transparent 360deg)',
       },
       boxShadow: {
-        'warm': '0 4px 20px rgba(160,82,45,0.15)',
+        'warm': '0 4px 20px rgba(54,31,19,0.15)',
         'custom': '0 4px 12px rgba(0,0,0,0.1)',
-        'hover': '0 8px 30px rgba(160,82,45,0.2)',
+        'hover': '0 8px 30px rgba(54,31,19,0.2)',
       },
       screens: {
         'mobile': '480px',

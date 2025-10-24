@@ -1,47 +1,18 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { useTranslation } from './TranslationProvider'
 import { MapPin, Phone, Mail, Clock, Send, ExternalLink } from 'lucide-react'
+import { useForm, ValidationError } from '@formspree/react'
 import toast from 'react-hot-toast'
 
 export default function ContactSection() {
   const { t, isRTL } = useTranslation()
-  
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-  
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [state, handleSubmit] = useForm("xovpaaew")
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    if (!formData.name || !formData.email || !formData.message) {
-      toast.error('Please fill in all required fields.', {
-        duration: 4000,
-        position: 'top-center'
-      })
-      return
-    }
-
-    setIsSubmitting(true)
-
-    try {
-      // Mock API call - replace with actual contact form submission
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
+  // Show success toast when form is submitted successfully
+  React.useEffect(() => {
+    if (state.succeeded) {
       toast.success(t('contact.success'), {
         duration: 4000,
         position: 'top-center',
@@ -56,22 +27,8 @@ export default function ContactSection() {
           textAlign: isRTL ? 'right' : 'left'
         }
       })
-      
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      })
-    } catch {
-      toast.error('An error occurred. Please try again.', {
-        duration: 4000,
-        position: 'top-center'
-      })
-    } finally {
-      setIsSubmitting(false)
     }
-  }
+  }, [state.succeeded, t, isRTL])
 
   return (
     <section 
@@ -198,7 +155,7 @@ export default function ContactSection() {
             {/* Map */}
             <div className="bg-white rounded-2xl p-6 shadow-warm">
               <h3 className={`text-lg font-bold text-text-heading mb-4 ${isRTL ? 'text-right' : 'text-left'}`}>
-                {isRTL ? 'موقعنا' : 'Our Location'}
+                {t('contact.location.title')}
               </h3>
               <div className="aspect-video rounded-xl overflow-hidden bg-gray-200">
                 <iframe
@@ -218,89 +175,119 @@ export default function ContactSection() {
           {/* Contact Form */}
           <div className={`${isRTL ? 'lg:col-start-1' : ''}`}>
             <div className="bg-white rounded-2xl p-8 shadow-warm">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name and Email */}
-                <div className="grid md:grid-cols-2 gap-4">
+              {state.succeeded ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Send className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-text-heading mb-2">
+                    {t('contact.success')}
+                  </h3>
+                  <p className="text-text-body">
+                    {t('contact.successMessage')}
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Name and Email */}
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label htmlFor="name" className={`block text-sm font-medium text-text-heading ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {t('contact.form.name')} *
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        className={`form-input ${isRTL ? 'text-right' : ''}`}
+                        required
+                      />
+                      <ValidationError 
+                        prefix="Name" 
+                        field="name"
+                        errors={state.errors}
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <label htmlFor="email" className={`block text-sm font-medium text-text-heading ${isRTL ? 'text-right' : 'text-left'}`}>
+                        {t('contact.form.email')} *
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        className={`form-input ${isRTL ? 'text-right' : ''}`}
+                        required
+                      />
+                      <ValidationError 
+                        prefix="Email" 
+                        field="email"
+                        errors={state.errors}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Subject */}
                   <div className="space-y-2">
-                    <label className={`block text-sm font-medium text-text-heading ${isRTL ? 'text-right' : 'text-left'}`}>
-                      {t('contact.form.name')} *
+                    <label htmlFor="subject" className={`block text-sm font-medium text-text-heading ${isRTL ? 'text-right' : 'text-left'}`}>
+                      {t('contact.form.subject')}
                     </label>
                     <input
+                      id="subject"
                       type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
+                      name="subject"
                       className={`form-input ${isRTL ? 'text-right' : ''}`}
-                      required
+                    />
+                    <ValidationError 
+                      prefix="Subject" 
+                      field="subject"
+                      errors={state.errors}
                     />
                   </div>
-                  
+
+                  {/* Message */}
                   <div className="space-y-2">
-                    <label className={`block text-sm font-medium text-text-heading ${isRTL ? 'text-right' : 'text-left'}`}>
-                      {t('contact.form.email')} *
+                    <label htmlFor="message" className={`block text-sm font-medium text-text-heading ${isRTL ? 'text-right' : 'text-left'}`}>
+                      {t('contact.form.message')} *
                     </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className={`form-input ${isRTL ? 'text-right' : ''}`}
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={6}
+                      className={`form-textarea ${isRTL ? 'text-right' : ''}`}
+                      placeholder={t('contact.placeholder.message')}
                       required
                     />
+                    <ValidationError 
+                      prefix="Message" 
+                      field="message"
+                      errors={state.errors}
+                    />
                   </div>
-                </div>
 
-                {/* Subject */}
-                <div className="space-y-2">
-                  <label className={`block text-sm font-medium text-text-heading ${isRTL ? 'text-right' : 'text-left'}`}>
-                    {t('contact.form.subject')}
-                  </label>
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className={`form-input ${isRTL ? 'text-right' : ''}`}
-                  />
-                </div>
-
-                {/* Message */}
-                <div className="space-y-2">
-                  <label className={`block text-sm font-medium text-text-heading ${isRTL ? 'text-right' : 'text-left'}`}>
-                    {t('contact.form.message')} *
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={6}
-                    className={`form-textarea ${isRTL ? 'text-right' : ''}`}
-                    placeholder={isRTL ? 'اكتب رسالتك هنا...' : 'Write your message here...'}
-                    required
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`w-full bg-primary hover:bg-secondary-dark text-white font-semibold py-4 px-8 rounded-custom transition-all duration-300 shadow-warm hover:shadow-hover transform hover:-translate-y-1 disabled:opacity-70 disabled:transform-none flex items-center justify-center gap-3 ${
-                    isRTL ? 'flex-row-reverse' : ''
-                  }`}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      <span>{isRTL ? 'جارٍ الإرسال...' : 'Sending...'}</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      <span>{t('contact.form.send')}</span>
-                    </>
-                  )}
-                </button>
-              </form>
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    disabled={state.submitting}
+                    className={`w-full bg-primary hover:bg-secondary-dark text-white font-semibold py-4 px-8 rounded-custom transition-all duration-300 shadow-warm hover:shadow-hover transform hover:-translate-y-1 disabled:opacity-70 disabled:transform-none flex items-center justify-center gap-3 ${
+                      isRTL ? 'flex-row-reverse' : ''
+                    }`}
+                  >
+                    {state.submitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        <span>{t('contact.form.sendingText')}</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5" />
+                        <span>{t('contact.form.send')}</span>
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>

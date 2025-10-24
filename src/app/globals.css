@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --primary: #A0522D;
+  --primary: #361F13;
   --secondary-light: #F5E6D3;
-  --secondary-dark: #8B4513;
+  --secondary-dark: #4A2E1F;
   --accent-red: #CD5C5C;
   --accent-gold: #DAA520;
   --text-heading: #2C1810;
@@ -70,7 +70,35 @@ body {
 .form-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.1);
+  box-shadow: 0 0 0 3px rgba(54, 31, 19, 0.1);
+}
+
+/* Enhanced form input styles for icon-enabled inputs */
+.form-input-with-icon {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 16px;
+  background: white;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-input-with-icon:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(54, 31, 19, 0.1);
+}
+
+/* Specific padding for inputs with left icons (LTR) */
+.form-input-with-icon.has-left-icon {
+  padding: 0.75rem 1rem 0.75rem 3.25rem; /* 52px left padding */
+}
+
+/* Specific padding for inputs with right icons (RTL) */
+.form-input-with-icon.has-right-icon {
+  padding: 0.75rem 3.25rem 0.75rem 1rem; /* 52px right padding */
+  text-align: right;
 }
 
 .form-textarea {
@@ -86,29 +114,144 @@ body {
 .form-textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.1);
+  box-shadow: 0 0 0 3px rgba(54, 31, 19, 0.1);
+}
+
+/* Enhanced textarea styles for icon-enabled textareas */
+.form-textarea-with-icon {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 16px;
+  background: white;
+  resize: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-textarea-with-icon:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(54, 31, 19, 0.1);
+}
+
+/* Specific padding for textarea with left icons (LTR) */
+.form-textarea-with-icon.has-left-icon {
+  padding: 0.75rem 1rem 0.75rem 3.25rem; /* 52px left padding */
+}
+
+/* Specific padding for textarea with right icons (RTL) */
+.form-textarea-with-icon.has-right-icon {
+  padding: 0.75rem 3.25rem 0.75rem 1rem; /* 52px right padding */
+  text-align: right;
+}
+
+/* Icon positioning improvements */
+.form-input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--text-light);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.form-input-icon.icon-left {
+  left: 0.875rem; /* 14px from left */
+}
+
+.form-input-icon.icon-right {
+  right: 0.875rem; /* 14px from right */
+}
+
+.form-textarea-icon {
+  position: absolute;
+  top: 0.875rem; /* 14px from top for textarea */
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--text-light);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.form-textarea-icon.icon-left {
+  left: 0.875rem; /* 14px from left */
+}
+
+.form-textarea-icon.icon-right {
+  right: 0.875rem; /* 14px from right */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 640px) {
+  .form-input-with-icon.has-left-icon,
+  .form-textarea-with-icon.has-left-icon {
+    padding-left: 3rem; /* Reduce to 48px on mobile */
+  }
+  
+  .form-input-with-icon.has-right-icon,
+  .form-textarea-with-icon.has-right-icon {
+    padding-right: 3rem; /* Reduce to 48px on mobile */
+  }
+  
+  .form-input-icon.icon-left,
+  .form-textarea-icon.icon-left {
+    left: 0.75rem; /* 12px from left on mobile */
+  }
+  
+  .form-input-icon.icon-right,
+  .form-textarea-icon.icon-right {
+    right: 0.75rem; /* 12px from right on mobile */
+  }
+}
+
+/* Enhanced focus states with icon color change */
+.form-input-with-icon:focus + .form-input-icon,
+.form-textarea-with-icon:focus + .form-textarea-icon {
+  color: var(--primary);
+}
+
+/* Ensure icons don't interfere with input interaction */
+.form-input-icon,
+.form-textarea-icon {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Better visual hierarchy */
+.form-input-with-icon::placeholder,
+.form-textarea-with-icon::placeholder {
+  color: var(--text-light);
+  opacity: 0.8;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(54, 31, 19, 0.1);
 }
 
 /* Pattern backgrounds */
 .pattern-moroccan {
-  background-image: radial-gradient(circle at 50% 50%, rgba(160,82,45,0.1) 2px, transparent 2px);
+  background-image: radial-gradient(circle at 50% 50%, rgba(54,31,19,0.1) 2px, transparent 2px);
   background-size: 30px 30px;
 }
 
 .pattern-geometric {
-  background-image: conic-gradient(from 0deg at 50% 50%, rgba(160,82,45,0.1) 0deg, transparent 120deg, rgba(205,92,92,0.1) 240deg, transparent 360deg);
+  background-image: conic-gradient(from 0deg at 50% 50%, rgba(54,31,19,0.1) 0deg, transparent 120deg, rgba(205,92,92,0.1) 240deg, transparent 360deg);
   background-size: 60px 60px;
 }
 
 /* Navigation specific styles */
 .nav-link {
   position: relative;
-  color: white;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--accent-gold);
+  color: inherit;
 }
 
 .nav-link::after {
@@ -118,7 +261,7 @@ body {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: var(--accent-gold);
+  background-color: var(--underline-color, var(--accent-gold));
   transition: width 0.3s ease;
 }
 

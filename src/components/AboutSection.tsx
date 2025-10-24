@@ -12,22 +12,22 @@ export default function AboutSection() {
     {
       icon: ChefHat,
       title: t('about.features.authentic'),
-      description: 'Traditional recipes passed down through generations'
+      description: t('about.features.authenticDesc')
     },
     {
       icon: Heart,
       title: t('about.features.fresh'),
-      description: 'Sourced daily from the finest local suppliers'
+      description: t('about.features.freshDesc')
     },
     {
       icon: Award,
       title: t('about.features.heritage'),
-      description: 'Preserving the authentic taste of Yemen'
+      description: t('about.features.heritageDesc')
     },
     {
       icon: Clock,
       title: t('about.features.hospitality'),
-      description: 'Exceptional service with genuine care'
+      description: t('about.features.hospitalityDesc')
     }
   ]
 
@@ -98,15 +98,15 @@ export default function AboutSection() {
             <div className={`grid grid-cols-3 gap-6 pt-8 ${isRTL ? 'text-right' : 'text-left'}`}>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">25+</div>
-                <div className="text-sm text-text-light uppercase tracking-wide">Years Experience</div>
+                <div className="text-sm text-text-light uppercase tracking-wide">{t('about.stats.yearsExp')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent-red mb-2">50k+</div>
-                <div className="text-sm text-text-light uppercase tracking-wide">Happy Customers</div>
+                <div className="text-sm text-text-light uppercase tracking-wide">{t('about.stats.customers')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent-gold mb-2">100+</div>
-                <div className="text-sm text-text-light uppercase tracking-wide">Authentic Dishes</div>
+                <div className="text-sm text-text-light uppercase tracking-wide">{t('about.stats.dishes')}</div>
               </div>
             </div>
           </div>
@@ -141,8 +141,8 @@ export default function AboutSection() {
                     <Award className="w-6 h-6 text-white" />
                   </div>
                   <div className={isRTL ? 'text-right' : 'text-left'}>
-                    <div className="text-sm font-bold text-text-heading">Award Winning</div>
-                    <div className="text-xs text-text-light">Best Yemeni Restaurant 2024</div>
+                    <div className="text-sm font-bold text-text-heading">{t('about.awards.winning')}</div>
+                    <div className="text-xs text-text-light">{t('about.awards.bestRestaurant')}</div>
                   </div>
                 </div>
               </div>
@@ -151,7 +151,7 @@ export default function AboutSection() {
               <div className={`absolute bottom-8 ${isRTL ? '-right-12' : '-left-12'} w-32 h-40 rounded-xl overflow-hidden shadow-xl border-4 border-white`}>
                 <Image
                   src="/image/WhatsApp Image 2025-10-21 at 15.30.19_c81034b7.jpg"
-                  alt="Traditional Yemeni Dish"
+                  alt={t('about.imageAlt.dish')}
                   fill
                   className="object-cover"
                   sizes="128px"

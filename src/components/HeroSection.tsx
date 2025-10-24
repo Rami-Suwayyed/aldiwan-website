@@ -73,7 +73,7 @@ export default function HeroSection() {
             <div className={`lg:col-span-7 space-y-8 ${isRTL ? 'lg:col-start-6 text-right' : 'text-left'}`}>
               <div className="space-y-6 fadeIn">
                 {/* Subtitle */}
-                <div className="inline-block">
+                <div className="inline-block pt-8">
                   <span className="bg-accent-gold/20 text-accent-gold px-6 py-2 rounded-full text-sm font-medium backdrop-blur-sm border border-accent-gold/30">
                     {t('hero.subtitle')}
                   </span>
@@ -98,26 +98,26 @@ export default function HeroSection() {
                       <Star className="w-6 h-6 text-white" />
                     </div>
                     <div className="text-2xl font-bold text-white">4.8</div>
-                    <div className="text-sm text-white/80">Rating</div>
+                    <div className="text-sm text-white/80">{t('hero.stats.rating')}</div>
                   </div>
                   <div className="text-center">
                     <div className="flex items-center justify-center w-12 h-12 bg-accent-red rounded-full mb-2 mx-auto">
                       <Clock className="w-6 h-6 text-white" />
                     </div>
                     <div className="text-2xl font-bold text-white">30</div>
-                    <div className="text-sm text-white/80">Min Delivery</div>
+                    <div className="text-sm text-white/80">{t('hero.stats.delivery')}</div>
                   </div>
                   <div className="text-center">
                     <div className="flex items-center justify-center w-12 h-12 bg-primary rounded-full mb-2 mx-auto">
                       <Users className="w-6 h-6 text-white" />
                     </div>
                     <div className="text-2xl font-bold text-white">500+</div>
-                    <div className="text-sm text-white/80">Happy Customers</div>
+                    <div className="text-sm text-white/80">{t('hero.stats.customers')}</div>
                   </div>
                 </div>
 
                 {/* CTA Buttons */}
-                <div className={`flex flex-col sm:flex-row gap-4 pt-4 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
+                <div className={`flex flex-col sm:flex-row gap-4 pt-4 pb-8 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
                   <button
                     onClick={() => scrollToSection('menu')}
                     className={`group bg-accent-gold hover:bg-accent-gold/90 text-white font-semibold py-4 px-8 rounded-custom transition-all duration-300 shadow-hover transform hover:-translate-y-1 flex items-center justify-center gap-3 ${

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useTranslation } from './TranslationProvider'
 import LanguageSwitcher from './LanguageSwitcher'
 import Image from 'next/image'
@@ -12,6 +13,7 @@ export default function Navigation() {
   const [activeSection, setActiveSection] = useState('home')
   const [isMounted, setIsMounted] = useState(false)
   const { t, isRTL } = useTranslation()
+  const pathname = usePathname()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -20,6 +22,8 @@ export default function Navigation() {
   const closeMenu = () => {
     setIsMenuOpen(false)
   }
+  
+  const isHomePage = pathname === '/'
 
   useEffect(() => {
     setIsMounted(true)
@@ -51,28 +55,37 @@ export default function Navigation() {
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const offsetTop = element.offsetTop - 80
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      })
+    if (isHomePage) {
+      window.addEventListener('scroll', handleScroll)
     }
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [isHomePage])
+
+  const handleNavigation = (sectionId: string) => {
     closeMenu()
+    
+    // If we're on homepage, scroll to section
+    if (isHomePage) {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        const offsetTop = element.offsetTop - 80
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        })
+      }
+    } else {
+      // If we're on another page, navigate to homepage with hash
+      window.location.href = `/#${sectionId}`
+    }
   }
 
   const navItems = [
-    { id: 'home', label: t('navigation.home') },
-    { id: 'about', label: t('navigation.about') },
-    { id: 'menu', label: t('navigation.menu') },
-    { id: 'reservations', label: t('navigation.reservations') },
-    { id: 'contact', label: t('navigation.contact') }
+    { id: 'home', label: t('navigation.home'), route: '/' },
+    { id: 'about', label: t('navigation.about'), route: '/about' },
+    { id: 'menu', label: t('navigation.menu'), route: '/menu' },
+    { id: 'reservations', label: t('navigation.reservations'), route: null },
+    { id: 'contact', label: t('navigation.contact'), route: null }
   ]
 
   if (!isMounted) return null
@@ -100,49 +113,69 @@ export default function Navigation() {
                 <h1 className={`text-lg font-bold ${
                   isSticky ? 'text-primary' : 'text-white'
                 }`}>
-                  {isRTL ? 'الديوان اليمني' : 'Al Diwan Al Yemeni'}
+                  {t('appName')}
                 </h1>
               </div>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`nav-link ${
-                  activeSection === item.id ? 'active' : ''
-                } ${isSticky ? 'text-text-heading hover:text-primary' : 'text-white hover:text-accent-gold'}`}
-              >
-                {item.label}
-              </button>
-            ))}
+          <div className={`hidden lg:flex items-center gap-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
+            {navItems.map((item) => {
+              // If item has a route, use Link component
+              if (item.route) {
+                return (
+                  <Link
+                    key={item.id}
+                    href={item.route}
+                    onClick={() => handleNavigation(item.id)}
+                    className={`nav-link ${
+                      pathname === item.route ? 'active' : ''
+                    } ${isSticky ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-accent-gold'}`}
+                    style={ isSticky ? { '--underline-color': 'var(--primary)' } as React.CSSProperties : {} }
+                  >
+                    {item.label}
+                  </Link>
+                )
+              }
+              
+              // Otherwise use button for smooth scrolling
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavigation(item.id)}
+                  className={`nav-link ${
+                    activeSection === item.id ? 'active' : ''
+                  } ${isSticky ? 'text-gray-800 hover:text-primary' : 'text-white hover:text-accent-gold'}`}
+                >
+                  {item.label}
+                </button>
+              )
+            })}
           </div>
 
           {/* Language Switcher & Mobile Menu Button */}
           <div className={`flex items-center gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
-            <LanguageSwitcher />
+            <LanguageSwitcher isSticky={isSticky} />
             
             {/* Mobile menu button */}
             <button
               onClick={toggleMenu}
               className={`lg:hidden p-2 rounded-lg transition-colors duration-200 ${
-                isSticky ? 'text-text-heading hover:bg-gray-100' : 'text-white hover:bg-white/10'
+                isSticky ? 'text-gray-800 hover:bg-gray-100' : 'text-white hover:bg-white/10'
               }`}
               aria-label="Toggle Menu"
             >
               <div className="relative w-6 h-6">
-                <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
+                <span className={`block h-0.5 w-6 transition-all duration-300 ${
                   isMenuOpen ? 'rotate-45 translate-y-2.5' : ''
-                } ${isSticky ? 'bg-text-heading' : 'bg-white'}`}></span>
-                <span className={`block h-0.5 w-6 bg-current transition-all duration-300 mt-1.5 ${
+                } ${isSticky ? 'bg-gray-800' : 'bg-white'}`}></span>
+                <span className={`block h-0.5 w-6 transition-all duration-300 mt-1.5 ${
                   isMenuOpen ? 'opacity-0' : ''
-                } ${isSticky ? 'bg-text-heading' : 'bg-white'}`}></span>
-                <span className={`block h-0.5 w-6 bg-current transition-all duration-300 mt-1.5 ${
+                } ${isSticky ? 'bg-gray-800' : 'bg-white'}`}></span>
+                <span className={`block h-0.5 w-6 transition-all duration-300 mt-1.5 ${
                   isMenuOpen ? '-rotate-45 -translate-y-2.5' : ''
-                } ${isSticky ? 'bg-text-heading' : 'bg-white'}`}></span>
+                } ${isSticky ? 'bg-gray-800' : 'bg-white'}`}></span>
               </div>
             </button>
           </div>
@@ -153,17 +186,36 @@ export default function Navigation() {
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
           <div className="bg-white border-t border-gray-200 py-4 space-y-2">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-3 text-text-heading hover:text-primary hover:bg-gray-50 transition-colors duration-200 ${
-                  activeSection === item.id ? 'text-primary bg-gray-50' : ''
-                } ${isRTL ? 'text-right' : 'text-left'}`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              // If item has a route, use Link component
+              if (item.route) {
+                return (
+                  <Link
+                    key={item.id}
+                    href={item.route}
+                    onClick={() => handleNavigation(item.id)}
+                    className={`block w-full px-4 py-3 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors duration-200 ${
+                      pathname === item.route ? 'text-primary bg-gray-50' : ''
+                    } ${isRTL ? 'text-right' : 'text-left'}`}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              }
+              
+              // Otherwise use button for smooth scrolling
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavigation(item.id)}
+                  className={`block w-full px-4 py-3 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors duration-200 ${
+                    activeSection === item.id ? 'text-primary bg-gray-50' : ''
+                  } ${isRTL ? 'text-right' : 'text-left'}`}
+                >
+                  {item.label}
+                </button>
+              )
+            })}
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { useTranslation } from './TranslationProvider'
 import { menuData, MenuItem } from '../data/menuData'
 import MenuItemCard from './MenuItemCard'
@@ -78,17 +79,17 @@ export default function MenuSection() {
         <div className="text-center mt-16">
           <div className="bg-white rounded-2xl p-8 shadow-warm max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-text-heading mb-4">
-              {isRTL ? 'جرب قائمتنا الكاملة' : 'Experience Our Full Menu'}
+              {t('menu.experienceMenu')}
             </h3>
             <p className="text-text-light mb-6">
-              {isRTL 
-                ? 'اكتشف مجموعة واسعة من الأطباق اليمنية الأصيلة المحضرة بعناية فائقة'
-                : 'Discover our extensive collection of authentic Yemeni dishes prepared with utmost care'
-              }
+              {t('menu.experienceDesc')}
             </p>
-            <button className="bg-primary hover:bg-secondary-dark text-white font-semibold py-3 px-8 rounded-custom transition-all duration-300 shadow-warm hover:shadow-hover transform hover:-translate-y-1">
-              {isRTL ? 'تصفح القائمة الكاملة' : 'Browse Full Menu'}
-            </button>
+            <Link 
+              href="/menu"
+              className="inline-block bg-primary hover:bg-secondary-dark text-white font-semibold py-3 px-8 rounded-custom transition-all duration-300 shadow-warm hover:shadow-hover transform hover:-translate-y-1"
+            >
+              {t('menu.browseFullMenu')}
+            </Link>
           </div>
         </div>
       </div>

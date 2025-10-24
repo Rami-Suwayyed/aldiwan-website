@@ -39,6 +39,7 @@ export default function Footer() {
   }, [])
 
   const scrollToSection = (sectionId: string) => {
+    // Scroll to section if it exists on the current page
     const element = document.getElementById(sectionId)
     if (element) {
       const offsetTop = element.offsetTop - 80
@@ -48,6 +49,14 @@ export default function Footer() {
       })
     }
   }
+
+  const footerLinks = [
+    { id: 'home', label: t('navigation.home'), route: '/' },
+    { id: 'about', label: t('navigation.about'), route: '/about' },
+    { id: 'menu', label: t('navigation.menu'), route: '/menu' },
+    { id: 'reservations', label: t('navigation.reservations'), route: null },
+    { id: 'contact', label: t('navigation.contact'), route: null }
+  ]
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -88,7 +97,7 @@ export default function Footer() {
                 />
                 <div>
                   <h3 className="text-xl font-bold">
-                    {isRTL ? 'الديوان اليمني' : 'Al Diwan Al Yemeni'}
+                    {t('appName')}
                   </h3>
                 </div>
               </div>
@@ -137,51 +146,36 @@ export default function Footer() {
             <div className="space-y-6">
               <h4 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h4>
               <div className="space-y-3">
-                <button
-                  onClick={() => scrollToSection('home')}
-                  className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
-                >
-                  <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
-                    isRTL ? 'ml-3 rotate-180' : 'mr-3'
-                  }`} />
-                  <span>{t('navigation.home')}</span>
-                </button>
-                <button
-                  onClick={() => scrollToSection('about')}
-                  className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
-                >
-                  <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
-                    isRTL ? 'ml-3 rotate-180' : 'mr-3'
-                  }`} />
-                  <span>{t('navigation.about')}</span>
-                </button>
-                <button
-                  onClick={() => scrollToSection('menu')}
-                  className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
-                >
-                  <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
-                    isRTL ? 'ml-3 rotate-180' : 'mr-3'
-                  }`} />
-                  <span>{t('navigation.menu')}</span>
-                </button>
-                <button
-                  onClick={() => scrollToSection('reservations')}
-                  className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
-                >
-                  <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
-                    isRTL ? 'ml-3 rotate-180' : 'mr-3'
-                  }`} />
-                  <span>{t('navigation.reservations')}</span>
-                </button>
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
-                >
-                  <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
-                    isRTL ? 'ml-3 rotate-180' : 'mr-3'
-                  }`} />
-                  <span>{t('navigation.contact')}</span>
-                </button>
+                {footerLinks.map((link) => {
+                  if (link.route) {
+                    return (
+                      <Link
+                        key={link.id}
+                        href={link.route}
+                        onClick={() => scrollToSection(link.id)}
+                        className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
+                      >
+                        <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
+                          isRTL ? 'ml-3 rotate-180' : 'mr-3'
+                        }`} />
+                        <span>{link.label}</span>
+                      </Link>
+                    )
+                  }
+                  
+                  return (
+                    <button
+                      key={link.id}
+                      onClick={() => scrollToSection(link.id)}
+                      className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
+                    >
+                      <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
+                        isRTL ? 'ml-3 rotate-180' : 'mr-3'
+                      }`} />
+                      <span>{link.label}</span>
+                    </button>
+                  )
+                })}
               </div>
             </div>
 
@@ -191,18 +185,14 @@ export default function Footer() {
               <div className="space-y-4">
                 <div className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <MapPin className="w-5 h-5 text-accent-gold flex-shrink-0 mt-0.5" />
-                  <div className="text-white/90 text-sm">
-                    123 Heritage Street<br />
-                    Old City Quarter<br />
-                    Downtown, Capital City 12345
-                  </div>
+                  <div className="text-white/90 text-sm" dangerouslySetInnerHTML={{__html: t('contact.location.address').replace(/,/g, '<br />')}} />
                 </div>
                 
                 <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <Phone className="w-5 h-5 text-accent-gold flex-shrink-0" />
                   <div className="text-white/90 text-sm">
-                    <a href="tel:+15551234567" className="hover:text-white transition-colors">
-                      +1 (555) 123-4567
+                    <a href={`tel:${t('contact.location.phone').replace(/\s/g, '')}`} className="hover:text-white transition-colors">
+                      {t('contact.location.phone')}
                     </a>
                   </div>
                 </div>
@@ -210,8 +200,8 @@ export default function Footer() {
                 <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <Mail className="w-5 h-5 text-accent-gold flex-shrink-0" />
                   <div className="text-white/90 text-sm">
-                    <a href="mailto:info@aldiwanalyemeni.com" className="hover:text-white transition-colors">
-                      info@aldiwanalyemeni.com
+                    <a href={`mailto:${t('contact.location.email')}`} className="hover:text-white transition-colors">
+                      {t('contact.location.email')}
                     </a>
                   </div>
                 </div>
@@ -221,19 +211,16 @@ export default function Footer() {
             {/* Newsletter */}
             <div className="space-y-6">
               <h4 className="text-lg font-semibold mb-4">
-                {isRTL ? 'النشرة الإخبارية' : 'Newsletter'}
+                {t('footer.newsletter')}
               </h4>
               <p className="text-white/90 text-sm">
-                {isRTL 
-                  ? 'اشترك للحصول على آخر الأخبار والعروض الخاصة'
-                  : 'Subscribe to get the latest news and special offers'
-                }
+                {t('footer.newsletterDesc')}
               </p>
               
               <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
                 <input
                   type="email"
-                  placeholder={isRTL ? 'عنوان البريد الإلكتروني' : 'Email address'}
+                  placeholder={t('footer.newsletterPlaceholder')}
                   className={`w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-transparent ${
                     isRTL ? 'text-right' : 'text-left'
                   }`}
@@ -242,7 +229,7 @@ export default function Footer() {
                   type="submit"
                   className="w-full bg-accent-gold hover:bg-accent-gold/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
                 >
-                  {isRTL ? 'اشتراك' : 'Subscribe'}
+                  {t('footer.subscribe')}
                 </button>
               </form>
             </div>
@@ -258,7 +245,7 @@ export default function Footer() {
               <div className={`flex items-center gap-1 text-white/90 text-sm ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <span>{t('footer.rights')}</span>
                 <Heart className="w-4 h-4 text-red-400 mx-1" />
-                <span>Made with love</span>
+                <span>{t('footer.madeWithLove')}</span>
               </div>
               
               <div className={`flex items-center gap-6 text-sm ${isRTL ? 'flex-row-reverse' : ''}`}>
