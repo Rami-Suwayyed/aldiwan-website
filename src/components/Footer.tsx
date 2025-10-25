@@ -154,6 +154,7 @@ export default function Footer() {
                         href={link.route}
                         onClick={() => scrollToSection(link.id)}
                         className={`footer-link ${isRTL ? 'flex-row-reverse' : ''}`}
+                        style={ link.route ? {} : { cursor: 'pointer' } }
                       >
                         <ChevronRight className={`w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 ${
                           isRTL ? 'ml-3 rotate-180' : 'mr-3'

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Navigation from '../../components/Navigation'
-import MenuSection from '../../components/MenuSection'
+import FullMenuSection from '../../components/FullMenuSection'
 import Footer from '../../components/Footer'
 import { Toaster } from 'react-hot-toast'
 
@@ -26,7 +26,7 @@ export default function MenuPage() {
       
       {/* Page Header with spacing for fixed navigation */}
       <div className="pt-20">
-        <MenuSection />
+        <FullMenuSection />
       </div>
       
       <Footer />

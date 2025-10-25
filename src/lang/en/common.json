@@ -102,6 +102,32 @@
     }
   },
 
+  "homeMenu": {
+    "title": "Taste of Yemen",
+    "subtitle": "Featured Specialties",
+    "description": "Discover our most beloved Yemeni dishes, carefully selected to showcase the authentic flavors and traditional cooking methods passed down through generations.",
+    "categoriesTitle": "Explore Our Categories",
+    "ctaTitle": "Discover Our Complete Menu",
+    "ctaDescription": "Experience the full range of our authentic Yemeni cuisine with detailed descriptions, ingredients, and our chef's recommendations.",
+    "viewFullMenu": "View Full Menu"
+  },
+
+  "fullMenu": {
+    "title": "Complete Menu Collection",
+    "subtitle": "Authentic Yemeni Cuisine",
+    "description": "Explore our comprehensive collection of traditional Yemeni dishes, each prepared with authentic ingredients and time-honored recipes.",
+    "stats": {
+      "totalDishes": "Total Dishes",
+      "categories": "Categories",
+      "popularDishes": "Popular Items",
+      "averageRating": "Rating"
+    },
+    "ctaTitle": "Ready to Experience Authentic Yemen?",
+    "ctaDescription": "Place your order or make a reservation to enjoy our carefully crafted dishes in an authentic Yemeni atmosphere.",
+    "orderNow": "Order Now",
+    "makeReservation": "Make Reservation"
+  },
+
   "menu": {
     "title": "Our Menu",
     "subtitle": "Traditional Yemeni Cuisine",
@@ -110,6 +136,10 @@
     "browseFullMenu": "Browse Full Menu",
     "experienceMenu": "Experience Our Full Menu",
     "experienceDesc": "Discover our extensive collection of authentic Yemeni dishes prepared with utmost care",
+    "readyToOrder": "Ready to Order?",
+    "readyToOrderDesc": "Make a reservation or contact us to place your order for an authentic Yemeni dining experience",
+    "makeReservation": "Make Reservation",
+    "contactUs": "Contact Us",
     "categories": {
       "mains": "Main Dishes",
       "rice": "Rice Dishes",

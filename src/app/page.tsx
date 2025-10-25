@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Navigation from '../components/Navigation'
 import HeroSection from '../components/HeroSection'
 import AboutSection from '../components/AboutSection'
-import MenuSection from '../components/MenuSection'
+import HomeMenuSection from '../components/HomeMenuSection'
 import ReservationSection from '../components/ReservationSection'
 import ContactSection from '../components/ContactSection'
 import Footer from '../components/Footer'
@@ -47,7 +47,7 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <AboutSection />
-      <MenuSection />
+      <HomeMenuSection />
       <ReservationSection />
       <ContactSection />
       <Footer />

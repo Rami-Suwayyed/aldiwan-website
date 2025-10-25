@@ -66,9 +66,9 @@ export default function MenuItemCard({ item, onViewDetails }: MenuItemCardProps)
         </div>
 
         {/* Price Badge */}
-        <div className={`absolute bottom-3 ${isRTL ? 'right-3' : 'left-3'} bg-white text-primary px-3 py-1 rounded-full font-bold text-sm shadow-lg`}>
+        {/* <div className={`absolute bottom-3 ${isRTL ? 'right-3' : 'left-3'} bg-white text-primary px-3 py-1 rounded-full font-bold text-sm shadow-lg`}>
           ${item.price}
-        </div>
+        </div> */}
 
         {/* View Details Button */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -105,9 +105,9 @@ export default function MenuItemCard({ item, onViewDetails }: MenuItemCardProps)
             <span className="text-sm text-text-light ml-2">4.8</span>
           </div>
 
-          <button className="bg-primary hover:bg-secondary-dark text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:shadow-lg">
+          {/* <button className="bg-primary hover:bg-secondary-dark text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:shadow-lg">
             {t('menu.orderNow')}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

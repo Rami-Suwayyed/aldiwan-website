@@ -159,7 +159,7 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
           </div>
 
           {/* Action Buttons */}
-          <div className={`flex gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
+          {/* <div className={`flex gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
             <button className={`flex-1 bg-primary hover:bg-secondary-dark text-white font-semibold py-4 px-6 rounded-custom transition-all duration-300 shadow-warm hover:shadow-hover transform hover:-translate-y-1 flex items-center justify-center gap-3 ${
               isRTL ? 'flex-row-reverse' : ''
             }`}>
@@ -170,7 +170,7 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
             <button className="bg-accent-gold hover:bg-accent-gold/90 text-white font-semibold py-4 px-6 rounded-custom transition-all duration-300 shadow-warm hover:shadow-hover">
               {isRTL ? 'اطلب الآن' : 'Order Now'}
             </button>
-          </div>
+          </div> */}
 
           {/* Allergen Info */}
           <div className="mt-6 p-4 bg-gray-50 rounded-xl">
