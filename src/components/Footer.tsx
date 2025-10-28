@@ -89,7 +89,7 @@ export default function Footer() {
             <div className="lg:col-span-1 space-y-6">
               <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <Image
-                  src="/image/3D_Logo.png"
+                  src="/image/lodo0.webp"
                   alt="Al Diwan Al Yemeni"
                   width={50}
                   height={50}

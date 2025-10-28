@@ -102,7 +102,7 @@ export default function Navigation() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
-                src="/image/3D_Logo.png"
+                src="/image/lodo0.webp"
                 alt="Al Diwan Al Yemeni"
                 width={50}
                 height={50}

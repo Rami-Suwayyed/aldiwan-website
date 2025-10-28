@@ -41,8 +41,8 @@ export const menuData = {
         },
         price: 25,
         image: '/image/WhatsApp Image 2025-10-21 at 15.30.19_87ec1b72.jpg',
-        popular: true,
-        spicy: 2
+        // popular: true,
+        // spicy: 2
       },
       {
         id: 'mandi-chicken',
@@ -56,8 +56,8 @@ export const menuData = {
         },
         price: 18,
         image: '/image/WhatsApp Image 2025-10-21 at 15.30.18_68253f73.jpg',
-        popular: true,
-        spicy: 1
+        // popular: true,
+        // spicy: 1
       },
       {
         id: 'zurbian-lamb',
@@ -71,7 +71,7 @@ export const menuData = {
         },
         price: 28,
         image: '/image/WhatsApp Image 2025-10-21 at 15.30.19_c81034b7.jpg',
-        spicy: 2
+        // spicy: 2
       }
     ],
     
@@ -88,7 +88,7 @@ export const menuData = {
         },
         price: 22,
         image: '/image/WhatsApp Image 2025-10-21 at 15.30.35_29e9c4ff.jpg',
-        spicy: 1
+        // spicy: 1
       },
       {
         id: 'kabsa',
@@ -102,8 +102,8 @@ export const menuData = {
         },
         price: 20,
         image: '/image/WhatsApp Image 2025-10-21 at 15.30.34_f39dd0f3.jpg',
-        popular: true,
-        spicy: 2
+        // popular: true,
+        // spicy: 2
       }
     ],
     
@@ -120,7 +120,7 @@ export const menuData = {
         },
         price: 32,
         image: '/image/WhatsApp Image 2025-10-21 at 15.30.35_84c19327.jpg',
-        spicy: 2
+        // spicy: 2
       },
       {
         id: 'grilled-fish',
@@ -134,7 +134,7 @@ export const menuData = {
         },
         price: 26,
         image: '/image/WhatsApp Image 2025-10-21 at 19.06.54_b442c5f5.jpg',
-        spicy: 1
+        // spicy: 1
       }
     ],
     
@@ -151,8 +151,8 @@ export const menuData = {
         },
         price: 8,
         image: '/image/WhatsApp Image 2025-10-21 at 15.30.36_6babfe66.jpg',
-        popular: true,
-        spicy: 1
+        // popular: true,
+        // spicy: 1
       },
       {
         id: 'fatayer',
@@ -166,7 +166,7 @@ export const menuData = {
         },
         price: 6,
         image: '/image/WhatsApp Image 2025-10-21 at 15.30.36_b36701f0.jpg',
-        spicy: 0
+        // spicy: 0
       }
     ],
     
@@ -183,8 +183,8 @@ export const menuData = {
         },
         price: 12,
         image: '/image/WhatsApp Image 2025-10-21 at 15.30.47_1501f55f.jpg',
-        popular: true,
-        spicy: 0
+        // popular: true,
+        // spicy: 0
       },
       {
         id: 'balaleet',
@@ -198,7 +198,7 @@ export const menuData = {
         },
         price: 10,
         image: '/image/WhatsApp Image 2025-10-21 at 15.30.47_96dd6ca1.jpg',
-        spicy: 0
+        // spicy: 0
       }
     ],
     
@@ -215,8 +215,8 @@ export const menuData = {
         },
         price: 4,
         image: '/image/WhatsApp Image 2025-10-21 at 19.06.55_4e515c31.jpg',
-        popular: true,
-        spicy: 0
+        // popular: true,
+        // spicy: 0
       },
       {
         id: 'tamarind-juice',
@@ -230,7 +230,7 @@ export const menuData = {
         },
         price: 5,
         image: '/image/WhatsApp Image 2025-10-21 at 19.06.55_e38cdbe3.jpg',
-        spicy: 0
+        // spicy: 0
       }
     ]
   }

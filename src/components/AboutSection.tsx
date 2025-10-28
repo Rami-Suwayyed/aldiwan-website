@@ -95,8 +95,8 @@ export default function AboutSection() {
             </div>
 
             {/* Stats */}
-            <div className={`grid grid-cols-3 gap-6 pt-8 ${isRTL ? 'text-right' : 'text-left'}`}>
-              <div className="text-center">
+            {/* <div className={`grid grid-cols-3 gap-6 pt-8 ${isRTL ? 'text-right' : 'text-left'}`}> */}
+              {/* <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">25+</div>
                 <div className="text-sm text-text-light uppercase tracking-wide">{t('about.stats.yearsExp')}</div>
               </div>
@@ -107,8 +107,8 @@ export default function AboutSection() {
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent-gold mb-2">100+</div>
                 <div className="text-sm text-text-light uppercase tracking-wide">{t('about.stats.dishes')}</div>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </div>
 
           {/* Image Content */}
@@ -131,11 +131,11 @@ export default function AboutSection() {
               </div>
 
               {/* Decorative elements */}
-              <div className={`absolute -top-6 ${isRTL ? '-left-6' : '-right-6'} w-24 h-24 bg-accent-gold rounded-full opacity-20 animate-pulse`}></div>
-              <div className={`absolute -bottom-6 ${isRTL ? '-right-6' : '-left-6'} w-16 h-16 bg-accent-red rounded-full opacity-30`}></div>
+              {/* <div className={`absolute -top-6 ${isRTL ? '-left-6' : '-right-6'} w-24 h-24 bg-accent-gold rounded-full opacity-20 animate-pulse`}></div>
+              <div className={`absolute -bottom-6 ${isRTL ? '-right-6' : '-left-6'} w-16 h-16 bg-accent-red rounded-full opacity-30`}></div> */}
               
               {/* Floating card */}
-              <div className={`absolute top-8 ${isRTL ? '-left-8' : '-right-8'} bg-white rounded-xl p-4 shadow-xl max-w-48`}>
+              {/* <div className={`absolute top-8 ${isRTL ? '-left-8' : '-right-8'} bg-white rounded-xl p-4 shadow-xl max-w-48`}>
                 <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                     <Award className="w-6 h-6 text-white" />
@@ -145,10 +145,10 @@ export default function AboutSection() {
                     <div className="text-xs text-text-light">{t('about.awards.bestRestaurant')}</div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Second Image - smaller overlay */}
-              <div className={`absolute bottom-8 ${isRTL ? '-right-12' : '-left-12'} w-32 h-40 rounded-xl overflow-hidden shadow-xl border-4 border-white`}>
+              {/* <div className={`absolute bottom-8 ${isRTL ? '-right-12' : '-left-12'} w-32 h-40 rounded-xl overflow-hidden shadow-xl border-4 border-white`}>
                 <Image
                   src="/image/WhatsApp Image 2025-10-21 at 15.30.19_c81034b7.jpg"
                   alt={t('about.imageAlt.dish')}
@@ -156,7 +156,7 @@ export default function AboutSection() {
                   className="object-cover"
                   sizes="128px"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

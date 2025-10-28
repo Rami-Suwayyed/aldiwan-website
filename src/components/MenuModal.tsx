@@ -3,7 +3,8 @@
 import React, { useEffect } from 'react'
 import { useTranslation } from './TranslationProvider'
 import Image from 'next/image'
-import { X, Star, Flame, ShoppingCart, Clock, Users } from 'lucide-react'
+// import { X, Star, Flame, ShoppingCart, Clock, Users } from 'lucide-react'
+import { X, Flame, Clock, Users } from 'lucide-react'
 import { MenuItem } from '../data/menuData'
 
 interface MenuModalProps {
@@ -90,9 +91,9 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           
           {/* Price Badge */}
-          <div className={`absolute bottom-4 ${isRTL ? 'right-4' : 'left-4'} bg-white text-primary px-4 py-2 rounded-full font-bold text-lg shadow-lg`}>
+          {/* <div className={`absolute bottom-4 ${isRTL ? 'right-4' : 'left-4'} bg-white text-primary px-4 py-2 rounded-full font-bold text-lg shadow-lg`}>
             ${item.price}
-          </div>
+          </div> */}
 
           {/* Popular Badge */}
           {item.popular && (
@@ -114,11 +115,11 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
             <div className={`flex items-center gap-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <div className="flex items-center gap-2">
                 <div className="flex">
-                  {[...Array(5)].map((_, i) => (
+                  {/* {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-accent-gold fill-current" />
-                  ))}
+                  ))} */}
                 </div>
-                <span className="text-sm text-text-light">4.8 (127 reviews)</span>
+                {/* <span className="text-sm text-text-light">4.8 (127 reviews)</span> */}
               </div>
               
               {item.spicy && item.spicy > 0 && (
