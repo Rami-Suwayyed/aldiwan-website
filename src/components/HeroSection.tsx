@@ -19,29 +19,27 @@ export default function HeroSection() {
   }
 
   return (
-    <section id="home" className="relative overflow-hidden min-h-screen bg-white">
-      {/* Background Image - Responsive scaling */}
-      <div className="absolute inset-0 w-full h-full p-2 sm:p-4 md:p-6 lg:p-8">
-        <div className="relative w-full h-full">
-          <Image
-            src="/image/cover-page2.png"
-            alt="Al Diwan Al Yemeni Background"
-            fill
-            className="object-contain object-center"
-            priority
-            quality={100}
-            sizes="100vw"
-          />
-        </div>
+    <section id="home" className="relative overflow-hidden h-screen w-full bg-white">
+      {/* Background Image - Full coverage */}
+      <div className="absolute inset-0 w-full h-full">
+        <Image
+          src="/image/cover-page2.png"
+          alt="Al Diwan Al Yemeni Background"
+          fill
+          className="object-cover object-center"
+          priority
+          quality={100}
+          sizes="100vw"
+        />
       </div>
 
       {/* Content Container - Centered with responsive padding */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center py-16 sm:py-20">
-        <div className="container mx-auto px-3 sm:px-4 lg:px-8 max-w-7xl">
+      <div className="relative z-10 h-full w-full flex items-center justify-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex flex-col items-center justify-center text-center space-y-4 sm:space-y-6">
             
             {/* Centered Logo - Responsive sizing */}
-            <div className="relative w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg mb-1 sm:mb-2">
+            <div className="relative w-full max-w-[240px] sm:max-w-[320px] md:max-w-md lg:max-w-lg">
               <div className="relative aspect-square w-full">
                 <Image
                   src="/image/Logo2.png"
@@ -50,13 +48,13 @@ export default function HeroSection() {
                   className="object-contain drop-shadow-2xl"
                   priority
                   quality={100}
-                  sizes="(max-width: 640px) 280px, (max-width: 768px) 384px, (max-width: 1024px) 448px, 512px"
+                  sizes="(max-width: 640px) 240px, (max-width: 768px) 320px, (max-width: 1024px) 448px, 512px"
                 />
               </div>
             </div>
 
             {/* CTA Buttons - Enhanced mobile responsiveness */}
-            <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4 w-full sm:w-auto ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
+            <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto max-w-md sm:max-w-none ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
               {/* Primary Button - View Menu */}
               <button
                 onClick={() => scrollToSection('menu')}
