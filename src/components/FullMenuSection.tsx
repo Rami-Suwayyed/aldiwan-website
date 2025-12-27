@@ -8,10 +8,11 @@ import MenuModal from './MenuModal'
 
 export default function FullMenuSection() {
   const { t, isRTL } = useTranslation()
-  const [activeCategory, setActiveCategory] = useState('mains')
+  const [activeMainSection, setActiveMainSection] = useState('qalayat')
+  const [activeSubcategory, setActiveSubcategory] = useState('breakfast')
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null)
 
-  const categories = Object.keys(menuData.categories)
+  const mainSections = menuData.mainSections
 
   const handleViewDetails = (item: MenuItem) => {
     setSelectedItem(item)
@@ -19,6 +20,21 @@ export default function FullMenuSection() {
 
   const closeModal = () => {
     setSelectedItem(null)
+  }
+
+  // Get current main section
+  const currentMainSection = mainSections.find(s => s.id === activeMainSection)
+  
+  // Get current subcategory items
+  const currentItems = menuData.items[activeSubcategory as keyof typeof menuData.items] || []
+
+  // Handle main section change
+  const handleMainSectionChange = (sectionId: string) => {
+    setActiveMainSection(sectionId)
+    const section = mainSections.find(s => s.id === sectionId)
+    if (section && section.subcategories.length > 0) {
+      setActiveSubcategory(section.subcategories[0].id)
+    }
   }
 
   return (
@@ -47,29 +63,45 @@ export default function FullMenuSection() {
           </p>
         </div>
 
-        {/* Category Navigation */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
+        {/* Main Sections Navigation */}
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          {mainSections.map((section) => (
             <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${
-                activeCategory === category
+              key={section.id}
+              onClick={() => handleMainSectionChange(section.id)}
+              className={`px-6 py-3 rounded-full font-bold text-lg transition-all duration-300 whitespace-nowrap ${
+                activeMainSection === section.id
                   ? 'bg-primary text-white shadow-hover transform -translate-y-1'
                   : 'bg-white text-text-body hover:bg-primary hover:text-white shadow-warm hover:shadow-hover'
               }`}
             >
-              {isRTL 
-                ? menuData.categories[category as keyof typeof menuData.categories].ar
-                : menuData.categories[category as keyof typeof menuData.categories].en
-              }
+              {isRTL ? section.name.ar : section.name.en}
             </button>
           ))}
         </div>
 
+        {/* Subcategories Navigation */}
+        {currentMainSection && (
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {currentMainSection.subcategories.map((subcategory) => (
+              <button
+                key={subcategory.id}
+                onClick={() => setActiveSubcategory(subcategory.id)}
+                className={`px-5 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${
+                  activeSubcategory === subcategory.id
+                    ? 'bg-accent-red text-white shadow-hover transform -translate-y-1'
+                    : 'bg-white text-text-body hover:bg-accent-red hover:text-white shadow-warm hover:shadow-hover'
+                }`}
+              >
+                {isRTL ? subcategory.name.ar : subcategory.name.en}
+              </button>
+            ))}
+          </div>
+        )}
+
         {/* Menu Items Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {menuData.items[activeCategory as keyof typeof menuData.items]?.map((item) => (
+          {currentItems.map((item) => (
             <MenuItemCard
               key={item.id}
               item={item}
@@ -77,6 +109,15 @@ export default function FullMenuSection() {
             />
           ))}
         </div>
+
+        {/* Empty State */}
+        {currentItems.length === 0 && (
+          <div className="text-center py-16">
+            <p className="text-text-light text-xl">
+              {isRTL ? 'لا توجد عناصر في هذا القسم' : 'No items in this section'}
+            </p>
+          </div>
+        )}
 
         {/* Menu Stats */}
         <div className="bg-white rounded-2xl p-8 shadow-warm mb-12">
@@ -89,7 +130,7 @@ export default function FullMenuSection() {
             </div>
             <div>
               <div className="text-3xl font-bold text-primary mb-2">
-                {Object.keys(menuData.categories).length}
+                {mainSections.length}
               </div>
               <div className="text-text-light">{t('fullMenu.stats.categories')}</div>
             </div>

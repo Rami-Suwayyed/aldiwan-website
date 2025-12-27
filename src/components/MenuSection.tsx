@@ -9,10 +9,11 @@ import MenuModal from './MenuModal'
 
 export default function MenuSection() {
   const { t, isRTL } = useTranslation()
-  const [activeCategory, setActiveCategory] = useState('mains')
+  const [activeCategory, setActiveCategory] = useState('breakfast')
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null)
 
-  const categories = Object.keys(menuData.categories)
+  // Get all available subcategories from mainSections
+  const allSubcategories = menuData.mainSections.flatMap(section => section.subcategories)
 
   const handleViewDetails = (item: MenuItem) => {
     setSelectedItem(item)
@@ -46,20 +47,17 @@ export default function MenuSection() {
 
         {/* Category Navigation */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
+          {allSubcategories.map((subcategory) => (
             <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
+              key={subcategory.id}
+              onClick={() => setActiveCategory(subcategory.id)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${
-                activeCategory === category
+                activeCategory === subcategory.id
                   ? 'bg-primary text-white shadow-hover transform -translate-y-1'
                   : 'bg-white text-text-body hover:bg-primary hover:text-white shadow-warm hover:shadow-hover'
               }`}
             >
-              {isRTL 
-                ? menuData.categories[category as keyof typeof menuData.categories].ar
-                : menuData.categories[category as keyof typeof menuData.categories].en
-              }
+              {isRTL ? subcategory.name.ar : subcategory.name.en}
             </button>
           ))}
         </div>

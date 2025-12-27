@@ -20,8 +20,11 @@ import {
 export default function Footer() {
   const { t, isRTL } = useTranslation()
   const [showBackToTop, setShowBackToTop] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
+    setIsMounted(true)
+    
     const handleScroll = () => {
       const scrollPosition = window.scrollY
       const windowHeight = window.innerHeight
@@ -71,7 +74,7 @@ export default function Footer() {
       <div className="absolute inset-0 pattern-geometric opacity-10"></div>
       
       {/* Back to Top Button */}
-      {showBackToTop && (
+      {isMounted && showBackToTop && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 z-40 bg-accent-gold hover:bg-accent-gold/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-hover transition-all duration-300 transform hover:-translate-y-1"
@@ -111,20 +114,20 @@ export default function Footer() {
                 <h4 className="text-lg font-semibold mb-4">{t('footer.followUs')}</h4>
                 <div className={`flex gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <a
-                    href="#"
+                    href="https://www.facebook.com/profile.php?id=61580965021646&mibextid=wwXIfr&rdid=dyK28cwi7gnKrYln&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1H6DRpPS8M%2F%3Fmibextid%3DwwXIfr#"
                     className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
                     aria-label="Facebook"
                   >
                     <Facebook className="w-5 h-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/dewanresturant.jo?igsh=bjF2cjV3ZzZyamt4"
                     className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
                     aria-label="Instagram"
                   >
                     <Instagram className="w-5 h-5" />
                   </a>
-                  <a
+                  {/* <a
                     href="#"
                     className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
                     aria-label="Twitter"
@@ -137,7 +140,7 @@ export default function Footer() {
                     aria-label="YouTube"
                   >
                     <Youtube className="w-5 h-5" />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

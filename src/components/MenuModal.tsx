@@ -96,11 +96,11 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
           </div> */}
 
           {/* Popular Badge */}
-          {item.popular && (
+          {/* {item.popular && (
             <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'} bg-accent-gold text-white px-3 py-1 rounded-full text-sm font-medium`}>
               🏆 Popular
             </div>
-          )}
+          )} */}
         </div>
 
         {/* Content */}
@@ -141,7 +141,7 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
           </div>
 
           {/* Additional Info */}
-          <div className="grid grid-cols-2 gap-4 mb-8 p-4 bg-background-warm rounded-xl">
+          {/* <div className="grid grid-cols-2 gap-4 mb-8 p-4 bg-background-warm rounded-xl">
             <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <Clock className="w-5 h-5 text-primary" />
               <div>
@@ -157,7 +157,7 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
                 <div className="text-sm text-text-light">2-3 people</div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Action Buttons */}
           {/* <div className={`flex gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
@@ -174,7 +174,7 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
           </div> */}
 
           {/* Allergen Info */}
-          <div className="mt-6 p-4 bg-gray-50 rounded-xl">
+          {/* <div className="mt-6 p-4 bg-gray-50 rounded-xl">
             <h4 className="text-sm font-semibold text-text-heading mb-2">
               {isRTL ? 'معلومات الحساسية:' : 'Allergen Information:'}
             </h4>
@@ -184,7 +184,7 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
                 : 'May contain nuts, gluten, and dairy products. Please inform your server of any food allergies.'
               }
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -50,7 +50,7 @@ export default function RootLayout({
           rel="stylesheet" 
         />
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
         <TranslationProvider>
           {children}
         </TranslationProvider>

@@ -16,6 +16,7 @@ interface MenuItemCardProps {
 export default function MenuItemCard({ item, onViewDetails }: MenuItemCardProps) {
   const { t, isRTL } = useTranslation()
   const [imageLoaded, setImageLoaded] = useState(false)
+  const [imageError, setImageError] = useState(false)
 
   const getSpiceLevel = (level: number) => {
     const flames = []
@@ -30,6 +31,9 @@ export default function MenuItemCard({ item, onViewDetails }: MenuItemCardProps)
     return flames
   }
 
+  // Use default image if the item image fails to load or is empty
+  const imageSrc = imageError || !item.image ? '/image/default.webp' : item.image
+
   return (
     <div className={`group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-warm hover:shadow-hover transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 ${
       isRTL ? 'text-right' : 'text-left'
@@ -37,13 +41,17 @@ export default function MenuItemCard({ item, onViewDetails }: MenuItemCardProps)
       {/* Image Container */}
       <div className="relative aspect-[4/3] overflow-hidden bg-gray-200">
         <Image
-          src={item.image}
+          src={imageSrc}
           alt={isRTL ? item.name.ar : item.name.en}
           fill
           className={`object-cover transition-all duration-500 group-hover:scale-110 ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           onLoad={() => setImageLoaded(true)}
+          onError={() => {
+            setImageError(true)
+            setImageLoaded(true)
+          }}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         
@@ -52,12 +60,12 @@ export default function MenuItemCard({ item, onViewDetails }: MenuItemCardProps)
         
         {/* Badges */}
         <div className={`absolute top-2 sm:top-3 ${isRTL ? 'left-2 sm:left-3' : 'right-2 sm:right-3'} flex flex-col gap-1.5 sm:gap-2`}>
-          {item.popular && (
+          {/* {item.popular && (
             <div className="bg-accent-gold text-white px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium flex items-center gap-0.5 sm:gap-1">
               <Crown className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
               <span>Popular</span>
             </div>
-          )}
+          )} */}
           {item.spicy && item.spicy > 0 && (
             <div className="bg-red-500 text-white px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium flex items-center gap-0.5 sm:gap-1">
               <div className="flex">
@@ -94,9 +102,9 @@ export default function MenuItemCard({ item, onViewDetails }: MenuItemCardProps)
         </h3>
 
         {/* Description */}
-        <p className="text-text-light text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-2">
+        {/* <p className="text-text-light text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-2">
           {isRTL ? item.description.ar : item.description.en}
-        </p>
+        </p> */}
 
         {/* Rating & Order Button */}
         <div className={`flex items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>

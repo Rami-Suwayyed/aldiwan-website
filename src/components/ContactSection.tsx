@@ -68,8 +68,7 @@ export default function ContactSection() {
                       {t('contact.info.address')}
                     </h3>
                     <p className="text-text-body mb-3">
-                      123 Heritage Street, Old City Quarter<br />
-                      Downtown, Capital City 12345
+                      {t('contact.location.address')}
                     </p>
                     <button className={`inline-flex items-center gap-2 text-primary hover:text-secondary-dark font-medium transition-colors duration-300 ${
                       isRTL ? 'flex-row-reverse' : ''
@@ -93,13 +92,18 @@ export default function ContactSection() {
                     </h3>
                     <div className="space-y-1">
                       <p className="text-text-body">
-                        <a href="tel:+15551234567" className="hover:text-primary transition-colors">
-                          +1 (555) 123-4567
+                        <a href="tel:++962798011163" className="hover:text-primary transition-colors">
+                          +962 7 9 801 1163
                         </a>
                       </p>
                       <p className="text-text-body">
-                        <a href="tel:+15551234568" className="hover:text-primary transition-colors">
-                          +1 (555) 123-4568
+                        <a href="tel:+962798011164" className="hover:text-primary transition-colors">
+                          +962 7 9 801 1164
+                        </a>
+                      </p>
+                      <p className="text-text-body">
+                        <a href="tel:+962798011165" className="hover:text-primary transition-colors">
+                          +962 7 9 801 1165
                         </a>
                       </p>
                     </div>
@@ -119,15 +123,15 @@ export default function ContactSection() {
                     </h3>
                     <div className="space-y-1">
                       <p className="text-text-body">
-                        <a href="mailto:info@aldiwanalyemeni.com" className="hover:text-primary transition-colors">
-                          info@aldiwanalyemeni.com
+                        <a href="mailto:info@dewanresturant.com" className="hover:text-primary transition-colors">
+                          info@dewanresturant.com
                         </a>
                       </p>
-                      <p className="text-text-body">
+                      {/* <p className="text-text-body">
                         <a href="mailto:reservations@aldiwanalyemeni.com" className="hover:text-primary transition-colors">
                           reservations@aldiwanalyemeni.com
                         </a>
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </div>
@@ -158,8 +162,9 @@ export default function ContactSection() {
                 {t('contact.location.title')}
               </h3>
               <div className="aspect-video rounded-xl overflow-hidden bg-gray-200">
+                
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3387.8750828921696!2d35.2147777!3d31.9515694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca1c0d1b66057%3A0x3d43c8a853e5b5d!2sAmman%2C%20Jordan!5e0!3m2!1sen!2sus!4v1635959999999!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3387.407497848937!2d35.9137961!3d31.895523799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca77301e21b53%3A0x460229a74380624c!2z2YXYt9in2LnZhSDYp9mE2K_ZitmI2KfZhiDYp9mE2YrZhdmG2Yo!5e0!3m2!1sen!2sjo!4v1766868785778!5m2!1sen!2sjo"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

@@ -102,9 +102,9 @@ export default function PrivacyPolicy() {
             <div className="mt-4 p-4 bg-background-warm rounded-lg">
               <p className="text-text-body">
                 <strong>Al Diwan Al Yemeni</strong><br />
-                Email: privacy@aldiwanalyemeni.com<br />
-                Phone: +1 (555) 123-4567<br />
-                Address: 123 Heritage Street, Old City Quarter, Downtown
+                Email: info@dewanresturant.com<br />
+                Phone: +962 7 9 801 1163<br />
+                Address: مطاعم الديوان اليمني
               </p>
             </div>
           </section>

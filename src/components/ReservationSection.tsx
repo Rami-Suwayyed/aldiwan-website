@@ -316,7 +316,7 @@ export default function ReservationSection() {
                       {t('reservations.info.instantContact')}
                     </h4>
                     <div className="text-white/90 text-sm">
-                      <div>{t('reservations.info.quickBooking')}+1 (555) 123-4567</div>
+                      <div>{t('reservations.info.quickBooking')}+962 7 9 801 1163</div>
                     </div>
                   </div>
                 </div>

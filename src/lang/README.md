@@ -152,7 +152,7 @@ Each language file (`common.json`) contains the following sections:
     },
     "location": {
       "address": "Full address",
-      "phone": "+1 (555) 123-4567",
+      "phone": "+962 7 9 801 1163",
       "email": "info@example.com",
       "getDirections": "Get Directions"
     },
