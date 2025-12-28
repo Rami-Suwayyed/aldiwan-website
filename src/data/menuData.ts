@@ -737,7 +737,7 @@ export const menuData = {
       {
         id: 'bukhari-lamb',
         name: {
-          en: 'Lamb Bukhari',
+          en: 'البخاري لحم',
           ar: 'البخاري لحم'
         },
         description: {
