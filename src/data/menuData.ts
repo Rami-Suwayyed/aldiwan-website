@@ -246,11 +246,11 @@ export const menuData = {
         id: 'peas-plain',
         name: {
           en: 'Plain Peas',
-          ar: 'بازيلاء سادة'
+          ar: 'بازيلا سادة'
         },
         description: {
           en: 'Simple cooked peas',
-          ar: 'بازيلاء مطبوخة بسيطة'
+          ar: 'بازيلا مطبوخة بسيطة'
         },
         price: 0,
         image: '/image/default.webp'
@@ -259,11 +259,11 @@ export const menuData = {
         id: 'peas-egg',
         name: {
           en: 'Peas with Eggs',
-          ar: 'بازيلاء مع البيض'
+          ar: 'بازيلا مع البيض'
         },
         description: {
           en: 'Peas cooked with eggs',
-          ar: 'بازيلاء مطبوخة مع البيض'
+          ar: 'بازيلا مطبوخة مع البيض'
         },
         price: 0,
         image: '/image/default.webp'
@@ -272,11 +272,11 @@ export const menuData = {
         id: 'peas-tuna',
         name: {
           en: 'Peas with Tuna',
-          ar: 'بازيلاء مع التونة'
+          ar: 'بازيلا مع التونة'
         },
         description: {
           en: 'Peas with tuna fish',
-          ar: 'بازيلاء مع سمك التونة'
+          ar: 'بازيلا مع سمك التونة'
         },
         price: 0,
         image: '/image/default.webp'
@@ -284,7 +284,7 @@ export const menuData = {
       {
         id: 'mix-breakfast',
         name: {
-          en: 'Mixed Breakfast',
+          en: 'Mixed',
           ar: 'مكس'
         },
         description: {
@@ -297,7 +297,7 @@ export const menuData = {
       {
         id: 'ful-plain',
         name: {
-          en: 'Plain Fava Beans',
+          en: 'فول سادة',
           ar: 'فول سادة'
         },
         description: {
