@@ -160,7 +160,7 @@ export const menuData = {
           ar: 'فطور يمني تقليدي مميز'
         },
         price: 0,
-        image: '/image/default.webp',
+        image: '/image/LahsaAlDiwan.ARW',
         popular: true
       },
       {
@@ -188,7 +188,7 @@ export const menuData = {
           ar: 'بيض مطبوخ في صلصة الطماطم مع التوابل'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Shakshuka.ARW'
       },
       {
         id: 'mathloutha',
@@ -201,7 +201,7 @@ export const menuData = {
           ar: 'طبق يمني تقليدي بصلصة خاصة'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Mathloutha.ARW'
       },
       {
         id: 'fasolia-nashif',
@@ -227,7 +227,7 @@ export const menuData = {
           ar: 'فاصولياء بيضاء مطبوخة مع البيض'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/FasoliaEgg.ARW'
       },
       {
         id: 'fasolia-cheese',
@@ -305,7 +305,7 @@ export const menuData = {
           ar: 'فول مدمس تقليدي'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/FulPlain.ARW'
       },
       {
         id: 'ful-cheese',
@@ -344,7 +344,7 @@ export const menuData = {
           ar: 'طبق كبدة بلدي تقليدي'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/LiverPlain.ARW'
       },
       {
         id: 'maqalqal-meat',
@@ -414,7 +414,7 @@ export const menuData = {
           ar: 'فتة حلوة بالتمر'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/FattaWithDates.ARW'
       },
       {
         id: 'fatta-cream',
@@ -444,7 +444,7 @@ export const menuData = {
           ar: 'خبز يمني مسطح مضاعف'
         },
         price: 0,
-        image: '/image/default.webp',
+        image: '/image/Mulawah.ARW',
         popular: true
       },
       {
@@ -458,7 +458,7 @@ export const menuData = {
           ar: 'خبز يمني مسطح تقليدي'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Mulawah.ARW'
       },
       {
         id: 'mulawah-single',
@@ -471,7 +471,7 @@ export const menuData = {
           ar: 'خبز يمني مسطح طبقة واحدة'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Mulawah.ARW'
       },
       {
         id: 'rashosh',
@@ -562,7 +562,7 @@ export const menuData = {
           ar: 'خبز يمني رطب'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Ratab.ARW'
       }
     ],
     
@@ -593,7 +593,7 @@ export const menuData = {
           ar: 'مطبق محشو بالبيض'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/EggMutabbaq.ARW'
       },
       {
         id: 'mutabbaq-salty',
@@ -731,7 +731,7 @@ export const menuData = {
           ar: 'لحم ضأن متبل مع أرز يمني خاص'
         },
         price: 0,
-        image: '/image/WhatsApp Image 2025-10-19 at 23.22.15_f41da439.jpg',
+        image: '/image/LambZurbian.ARW',
         popular: true
       },
       {
@@ -745,7 +745,7 @@ export const menuData = {
           ar: 'لحم مع أرز البخاري'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Bukhari.ARW'
       },
       {
         id: 'zarb-lamb',
@@ -758,7 +758,7 @@ export const menuData = {
           ar: 'لحم مطبوخ في الزرب'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/LambZarb.ARW'
       },
       {
         id: 'biryani-lamb',
@@ -840,7 +840,7 @@ export const menuData = {
           ar: 'دجاج طري مع أرز عطري'
         },
         price: 0,
-        image: '/image/WhatsApp Image 2025-10-21 at 15.30.34_f39dd0f3.jpg',
+        image: '/image/ChickenMandi.ARW',
         popular: true
       },
       {
@@ -868,7 +868,7 @@ export const menuData = {
           ar: 'دجاج مشوي'
         },
         price: 0,
-        image: '/image/WhatsApp Image 2025-10-21 at 15.30.35_84c19327.jpg'
+        image: '/image/ChickenMadhbi.ARW'
       },
       {
         id: 'zarb-chicken',
@@ -881,7 +881,7 @@ export const menuData = {
           ar: 'دجاج مطبوخ في الزرب'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/ChickenZarb.jpg'
       },
       {
         id: 'biryani-chicken',
@@ -907,7 +907,7 @@ export const menuData = {
           ar: 'دجاج مضغوط مع الأرز'
         },
         price: 0,
-        image: '/image/WhatsApp Image 2025-10-21 at 15.30.35_29e9c4ff.jpg'
+        image: '/image/ChickenMadhghoot.jpg'
       },
       {
         id: 'haneeth-chicken',
@@ -963,7 +963,7 @@ export const menuData = {
           ar: 'دجاج مشوي على الطريقة التركية'
         },
         price: 0,
-        image: '/image/default.webp',
+        image: '/image/ChickenTurkish.ARW',
         popular: true
       },
       {
@@ -1156,7 +1156,7 @@ export const menuData = {
           ar: 'خيار طازج مع اللبن'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/CucumberYogurtSalad.ARW'
       },
       {
         id: 'tahini-salad',
@@ -1221,7 +1221,7 @@ export const menuData = {
           ar: 'صلصة حارة بالجبن'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/SahawiqWithCheese.ARW'
       },
       {
         id: 'greek-salad',
@@ -1309,7 +1309,7 @@ export const menuData = {
           ar: 'معصوب الديوان الخاص بالموز والخبز والقشطة والعسل'
         },
         price: 0,
-        image: '/image/default.webp',
+        image: '/image/MasoobAlDiwan.ARW',
         popular: true
       },
       {
@@ -1350,7 +1350,7 @@ export const menuData = {
           ar: 'معصوب عادي تقليدي'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/MasoobPlain.ARW'
       }
     ],
     
@@ -1522,7 +1522,7 @@ export const menuData = {
           ar: 'عصير فواكه مشكلة خاص'
         },
         price: 0,
-        image: '/image/default.webp',
+        image: '/image/AwarQalb.jpg',
         popular: true
       },
       {
@@ -1550,8 +1550,7 @@ export const menuData = {
           ar: 'مزيج عصير فواكه استوائية'
         },
         price: 0,
-        image: '/image/default.webp',
-        popular: true
+        image: '/image/Shahrzad.jpg',
       },
       {
         id: 'lamset-zoq',
@@ -1564,7 +1563,7 @@ export const menuData = {
           ar: 'مزيج عصير راقي'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/LamsetZoq.jpg'
       },
       {
         id: 'mango',
@@ -1577,7 +1576,7 @@ export const menuData = {
           ar: 'عصير مانجو طازج'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Mango.jpg'
       },
       {
         id: 'strawberry',
@@ -1590,7 +1589,7 @@ export const menuData = {
           ar: 'عصير فراولة طازج'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Strawberry.jpg'
       },
       {
         id: 'cantaloupe',
@@ -1629,7 +1628,7 @@ export const menuData = {
           ar: 'عصير برتقال طازج'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Orange.jpg'
       },
       {
         id: 'carrot',
@@ -1668,7 +1667,7 @@ export const menuData = {
           ar: 'عصير ليمون ونعناع طازج'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/LemonMint.jpg'
       },
       {
         id: 'pineapple',
@@ -1707,7 +1706,7 @@ export const menuData = {
           ar: 'عصير مركز'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Concentrate.jpg'
       },
       {
         id: 'arais-plain',
@@ -1720,7 +1719,7 @@ export const menuData = {
           ar: 'مشروب عرايس تقليدي'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Arais.jpg'
       },
       {
         id: 'arais-nuts',
@@ -1733,8 +1732,7 @@ export const menuData = {
           ar: 'مشروب عرايس بالمكسرات'
         },
         price: 0,
-        image: '/image/default.webp',
-        popular: true
+        image: '/image/Arais.jpg'
       },
       {
         id: 'diwan-juice',
@@ -1747,7 +1745,7 @@ export const menuData = {
           ar: 'عصير الديوان الخاص'
         },
         price: 0,
-        image: '/image/default.webp',
+        image: '/image/AlDiwanJuice.jpg',
         popular: true
       },
       {
@@ -1774,7 +1772,7 @@ export const menuData = {
           ar: 'مزيج عصير فاخر'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Rawaa.jpg'
       },
       {
         id: 'orange-press',
@@ -1800,7 +1798,7 @@ export const menuData = {
           ar: 'مجموعة عصائر مشكلة'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Majmoo.jpg'
       },
       {
         id: 'cocktail-diwan',
@@ -1827,7 +1825,7 @@ export const menuData = {
           ar: 'عصير أفوكادو طازج'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Avocado.jpg'
       },
       {
         id: 'kiwi',
@@ -1840,7 +1838,7 @@ export const menuData = {
           ar: 'عصير كيوي طازج'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Kiwi.jpg'
       },
       {
         id: 'pomegranate',
@@ -1866,7 +1864,7 @@ export const menuData = {
           ar: 'عصير جوافة طازج'
         },
         price: 0,
-        image: '/image/default.webp'
+        image: '/image/Guava.jpg'
       },
       {
         id: 'fruit-salad',
@@ -1892,8 +1890,7 @@ export const menuData = {
           ar: 'مزيج أفوكادو الديوان الخاص'
         },
         price: 0,
-        image: '/image/default.webp',
-        popular: true
+        image: '/image/AvocadoAlDiwan.jpg',
       },
       {
         id: 'green-ginger',
