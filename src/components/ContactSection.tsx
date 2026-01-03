@@ -90,7 +90,7 @@ export default function ContactSection() {
                     <h3 className="text-lg font-bold text-text-heading mb-2">
                       {t('contact.info.phone')}
                     </h3>
-                    <div className="space-y-1">
+                    <div className="space-y-1" dir="ltr">
                       <p className="text-text-body">
                         <a href="tel:++962798011163" className="hover:text-primary transition-colors">
                           +962 7 9 801 1163
@@ -121,7 +121,7 @@ export default function ContactSection() {
                     <h3 className="text-lg font-bold text-text-heading mb-2">
                       {t('contact.info.email')}
                     </h3>
-                    <div className="space-y-1">
+                    <div className="space-y-1" dir="ltr">
                       <p className="text-text-body">
                         <a href="mailto:info@dewanresturant.com" className="hover:text-primary transition-colors">
                           info@dewanresturant.com

@@ -194,7 +194,7 @@ export default function Footer() {
                 
                 <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <Phone className="w-5 h-5 text-accent-gold flex-shrink-0" />
-                  <div className="text-white/90 text-sm">
+                  <div className="text-white/90 text-sm" dir="ltr">
                     <a href={`tel:${t('contact.location.phone').replace(/\s/g, '')}`} className="hover:text-white transition-colors">
                       {t('contact.location.phone')}
                     </a>
@@ -203,7 +203,7 @@ export default function Footer() {
                 
                 <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <Mail className="w-5 h-5 text-accent-gold flex-shrink-0" />
-                  <div className="text-white/90 text-sm">
+                  <div className="text-white/90 text-sm" dir="ltr">
                     <a href={`mailto:${t('contact.location.email')}`} className="hover:text-white transition-colors">
                       {t('contact.location.email')}
                     </a>
