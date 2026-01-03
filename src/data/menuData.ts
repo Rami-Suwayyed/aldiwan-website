@@ -160,7 +160,7 @@ export const menuData = {
           ar: 'فطور يمني تقليدي مميز'
         },
         price: 0,
-        image: '/image/LahsaAlDiwan.ARW',
+        image: '/image/LahsaAlDiwan.jpg',
         popular: true
       },
       {
@@ -188,7 +188,20 @@ export const menuData = {
           ar: 'بيض مطبوخ في صلصة الطماطم مع التوابل'
         },
         price: 0,
-        image: '/image/Shakshuka.ARW'
+        image: '/image/Shakshuka.jpg'
+      },
+         {
+        id: 'eggs-plain',
+        name: {
+          en: 'Plain Eggs',
+          ar: 'بيض مقلي'
+        },
+        description: {
+          en: 'Eggs plain fried',
+          ar: 'بيض مقلي'
+        },
+        price: 0,
+        image: '/image/بيض مقلي.jpg'
       },
       {
         id: 'mathloutha',
@@ -201,7 +214,7 @@ export const menuData = {
           ar: 'طبق يمني تقليدي بصلصة خاصة'
         },
         price: 0,
-        image: '/image/Mathloutha.ARW'
+        image: '/image/Mathloutha.jpg'
       },
       {
         id: 'fasolia-nashif',
@@ -227,7 +240,7 @@ export const menuData = {
           ar: 'فاصولياء بيضاء مطبوخة مع البيض'
         },
         price: 0,
-        image: '/image/FasoliaEgg.ARW'
+        image: '/image/FasoliaEgg.jpg'
       },
       {
         id: 'fasolia-cheese',
@@ -305,7 +318,20 @@ export const menuData = {
           ar: 'فول مدمس تقليدي'
         },
         price: 0,
-        image: '/image/FulPlain.ARW'
+        image: '/image/FulPlain.jpg'
+      },
+          {
+        id: 'ful-egg',
+        name: {
+          en: 'Fava Beans with Eggs',
+          ar: 'فول مع بيض  '
+        },
+        description: {
+          en: 'Traditional fava beans with eggs',
+          ar: 'فول مدمس تقليدي مع البيض'
+        },
+        price: 0,
+        image: '/image/فول مع بيض.jpg'
       },
       {
         id: 'ful-cheese',
@@ -344,7 +370,7 @@ export const menuData = {
           ar: 'طبق كبدة بلدي تقليدي'
         },
         price: 0,
-        image: '/image/LiverPlain.ARW'
+        image: '/image/LiverPlain.jpg'
       },
       {
         id: 'maqalqal-meat',
@@ -414,7 +440,7 @@ export const menuData = {
           ar: 'فتة حلوة بالتمر'
         },
         price: 0,
-        image: '/image/FattaWithDates.ARW'
+        image: '/image/FattaWithDates.jpg'
       },
       {
         id: 'fatta-cream',
@@ -433,6 +459,20 @@ export const menuData = {
     
     // 2. قسم المرسة والمخبازة - 2.1 المخبوزات
     'baked-goods': [
+        {
+        id: 'bread',
+        name: {
+          en: 'Bread',
+          ar: 'خبز'
+        },
+        description: {
+          en: 'Freshly baked traditional Yemeni bread',
+          ar: 'خبز يمني تقليدي مخبوز طازج'
+        },
+        price: 0,
+        image: '/image/خبز.jpg',
+        popular: true
+      },
       {
         id: 'mulawah-double',
         name: {
@@ -444,7 +484,7 @@ export const menuData = {
           ar: 'خبز يمني مسطح مضاعف'
         },
         price: 0,
-        image: '/image/Mulawah.ARW',
+        image: '/image/Mulawah.jpg',
         popular: true
       },
       {
@@ -458,7 +498,7 @@ export const menuData = {
           ar: 'خبز يمني مسطح تقليدي'
         },
         price: 0,
-        image: '/image/Mulawah.ARW'
+        image: '/image/Mulawah.jpg'
       },
       {
         id: 'mulawah-single',
@@ -471,7 +511,7 @@ export const menuData = {
           ar: 'خبز يمني مسطح طبقة واحدة'
         },
         price: 0,
-        image: '/image/Mulawah.ARW'
+        image: '/image/Mulawah.jpg'
       },
       {
         id: 'rashosh',
@@ -562,7 +602,7 @@ export const menuData = {
           ar: 'خبز يمني رطب'
         },
         price: 0,
-        image: '/image/Ratab.ARW'
+        image: '/image/Ratab.jpg'
       }
     ],
     
@@ -593,7 +633,7 @@ export const menuData = {
           ar: 'مطبق محشو بالبيض'
         },
         price: 0,
-        image: '/image/EggMutabbaq.ARW'
+        image: '/image/EggMutabbaq.jpg'
       },
       {
         id: 'mutabbaq-salty',
@@ -731,7 +771,7 @@ export const menuData = {
           ar: 'لحم ضأن متبل مع أرز يمني خاص'
         },
         price: 0,
-        image: '/image/LambZurbian.ARW',
+        image: '/image/zurbian-lamb.jpg',
         popular: true
       },
       {
@@ -745,7 +785,7 @@ export const menuData = {
           ar: 'لحم مع أرز البخاري'
         },
         price: 0,
-        image: '/image/Bukhari.ARW'
+        image: '/image/Bukhari.jpg'
       },
       {
         id: 'zarb-lamb',
@@ -758,7 +798,7 @@ export const menuData = {
           ar: 'لحم مطبوخ في الزرب'
         },
         price: 0,
-        image: '/image/LambZarb.ARW'
+        image: '/image/LambZarb.jpg'
       },
       {
         id: 'biryani-lamb',
@@ -840,7 +880,7 @@ export const menuData = {
           ar: 'دجاج طري مع أرز عطري'
         },
         price: 0,
-        image: '/image/ChickenMandi.ARW',
+        image: '/image/ChickenMandi.jpg',
         popular: true
       },
       {
@@ -868,7 +908,7 @@ export const menuData = {
           ar: 'دجاج مشوي'
         },
         price: 0,
-        image: '/image/ChickenMadhbi.ARW'
+        image: '/image/ChickenMadhbi.jpg'
       },
       {
         id: 'zarb-chicken',
@@ -963,7 +1003,7 @@ export const menuData = {
           ar: 'دجاج مشوي على الطريقة التركية'
         },
         price: 0,
-        image: '/image/ChickenTurkish.ARW',
+        image: '/image/ChickenTurkish.jpg',
         popular: true
       },
       {
@@ -1034,7 +1074,7 @@ export const menuData = {
           ar: 'يخنة لحم تقليدية'
         },
         price: 0,
-        image: '/image/default.webp',
+        image: '/image/فحسه.jpg',
         popular: true
       },
       {
@@ -1156,7 +1196,7 @@ export const menuData = {
           ar: 'خيار طازج مع اللبن'
         },
         price: 0,
-        image: '/image/CucumberYogurtSalad.ARW'
+        image: '/image/CucumberYogurtSalad.jpg'
       },
       {
         id: 'tahini-salad',
@@ -1221,7 +1261,7 @@ export const menuData = {
           ar: 'صلصة حارة بالجبن'
         },
         price: 0,
-        image: '/image/SahawiqWithCheese.ARW'
+        image: '/image/SahawiqWithCheese.jpg'
       },
       {
         id: 'greek-salad',
@@ -1309,7 +1349,7 @@ export const menuData = {
           ar: 'معصوب الديوان الخاص بالموز والخبز والقشطة والعسل'
         },
         price: 0,
-        image: '/image/MasoobAlDiwan.ARW',
+        image: '/image/MasoobAlDiwan.jpg',
         popular: true
       },
       {
@@ -1350,7 +1390,7 @@ export const menuData = {
           ar: 'معصوب عادي تقليدي'
         },
         price: 0,
-        image: '/image/MasoobPlain.ARW'
+        image: '/image/MasoobPlain.jpg'
       }
     ],
     
